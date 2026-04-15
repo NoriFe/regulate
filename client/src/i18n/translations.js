@@ -49,8 +49,7 @@
     },
     home: {
       beforeStartEyebrow: "Before you start exploring this website",
-      beforeStartCopy:
-        "This website introduces the following features, including accessibility widgets like read aloud, language switching and font support, plus gentle colour themes that can feel more comfortable for autistic and ADHD users. It also offers larger cursor sizes and high contrast settings for users with visual impairments. You can find all these widgets in the bottom right corner as shown in the photo.",
+      beforeStartCopy: "This website introduces the following features, including accessibility widgets like read aloud, language switching and font support, plus gentle colour themes that can feel more comfortable for autistic and ADHD users. It also offers larger cursor sizes and high contrast settings for users with visual impairments. You can find all these widgets in the bottom right corner as shown in the photo.",
       beforeStartRead:
         "Before we start. Website features. This section introduces the main features, including accessibility widgets like read aloud, language switching and font support, plus gentle colour themes that can feel more comfortable for autistic and ADHD users. We also offer larger cursor sizes and high contrast settings for users with visual impairments. You can find all these widgets in the bottom-right corner as shown in the photo.",
       beforeStartArrowLabel: "Accessibility widgets",
