@@ -1,2 +1,3 @@
-# Regulate to Learn
+﻿# Regulate2learn™
+
 
