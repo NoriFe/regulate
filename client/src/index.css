@@ -1,3 +1,68 @@
+.rre-page .services-intro .page-copy {
+	color: rgba(247, 232, 213, 0.86);
+}
+.rre-page {
+	background: linear-gradient(180deg, #14243a 0%, #0a1624 100%) !important;
+	min-height: 100vh;
+}
+.rre-page .services-intro {
+	background: linear-gradient(180deg, #14243a 0%, #0a1624 100%);
+	border: 1px solid rgba(247, 232, 213, 0.12);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+	border-radius: 1.25rem;
+	color: #f7e8d5;
+	padding: clamp(1.35rem, 2.6vw, 2.4rem);
+	margin-bottom: 2rem;
+}
+/* RRE page: uniform card styling for all blocks */
+.rre-flex-row > section.services-band {
+	background: linear-gradient(180deg, #14243a 0%, #0a1624 100%);
+	border: 1px solid rgba(247, 232, 213, 0.12);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+	border-radius: 1.25rem;
+	color: #f7e8d5;
+	padding: clamp(1.35rem, 2.6vw, 2.4rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.rre-flex-row > section .page-title--compact {
+	color: #c995a4;
+	margin-bottom: 1.1rem;
+}
+
+.rre-flex-row > section .sensemaths-list,
+.rre-flex-row > section .sensemaths-checklist {
+	color: rgba(247, 232, 213, 0.86);
+}
+
+.rre-flex-row > section .sensemaths-checklist li::before {
+	color: #2f7d53;
+}
+
+.rre-flex-row > section .page-copy {
+	color: rgba(247, 232, 213, 0.86);
+}
+/* RRE page: horizontal card rows */
+.rre-flex-row {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.rre-flex-row > section {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+@media (max-width: 900px) {
+	.rre-flex-row {
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+}
 .about-hello-photo.blob-img, .about-hello-photo.about-photo {
 	border-radius: 50% !important;
 }
@@ -103,10 +168,7 @@ body {
 	margin: 0;
 	font-family: var(--app-font-family);
 	color: var(--text);
-	background:
-		radial-gradient(circle at 84% 12%, rgba(76, 131, 187, 0.22), transparent 30%),
-		radial-gradient(circle at 14% 18%, rgba(113, 145, 179, 0.2), transparent 23%),
-		linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+	background: linear-gradient(180deg, #14243a 0%, #0a1624 100%) !important;
 	line-height: 1.7;
 	letter-spacing: 0.01em;
 }
@@ -1018,7 +1080,7 @@ color: #000000 !important;
 .page-copy {
 	margin: 0 0 1.5rem 0;
 	max-width: 60ch;
-	font-size: 1.08rem;
+	font-size: 1.18rem;
 	line-height: 1.8;
 	color: var(--muted);
 }
@@ -1447,6 +1509,20 @@ color: #000000 !important;
 }
 
 .about-hello-grid {
+	@media (max-width: 700px) {
+		.about-hello-grid {
+			grid-template-columns: 1fr;
+			gap: 1.2rem;
+		}
+		.about-hello-photo {
+			justify-self: center;
+			margin-top: 1.2rem;
+		}
+		.blob-img {
+			transform: none;
+			width: min(80vw, 320px);
+		}
+	}
 	display: grid;
 	grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.05fr);
 	gap: 2.4rem;
@@ -1467,7 +1543,7 @@ color: #000000 !important;
 	max-height: 420px;
 	width: 100%;
 	max-width: min(100%, 40rem);
-	justify-self: end;
+	justify-self: start;
 	display: block;
 	border-radius: 50%;
 }
@@ -1489,7 +1565,7 @@ color: #000000 !important;
 	background: radial-gradient(circle at 28% 22%, rgba(247, 232, 213, 0.2), rgba(247, 232, 213, 0));
 	filter: saturate(0.55) brightness(1.14) contrast(0.86) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.28));
 	opacity: 0.93;
-	transform: translateX(8%);
+	transform: translateX(23%);
 }
 
 .about-page .blob-img {

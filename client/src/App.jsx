@@ -26,9 +26,6 @@ function AppShell() {
       <BrowserRouter>
         <AccessibilityHub />
         <Routes>
-          {/* Redirect root to /main */}
-          <Route path="/" element={<Navigate to="/main" replace />} />
-          {/* Public routes */}
           <Route element={<PublicLayout />}>
             <Route path="main" element={<HomePage />} />
             <Route
@@ -48,8 +45,6 @@ function AppShell() {
             <Route path="services" element={<SupportPage />} />
             <Route path="contact" element={<ContactPage />} />
           </Route>
-          {/* Restore /login route, but keep it hidden from nav */}
-          <Route path="login" element={<LoginPage />} />
           <Route path="home" element={<Navigate to="/main" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
