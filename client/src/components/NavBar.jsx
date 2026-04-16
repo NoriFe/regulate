@@ -117,15 +117,7 @@ function NavBar() {
                 {t("common.logOut")}
               </button>
             </>
-          ) : (
-            <NavLink
-              to="/login"
-              className={({ isActive }) => `${navLinkClass({ isActive })} nav-link--auth`}
-              onClick={closeMenu}
-            >
-              {t("common.signIn")}
-            </NavLink>
-          )}
+          ) : null}
         </nav>
       </div>
     </header>
