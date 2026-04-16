@@ -3312,6 +3312,7 @@ color: #000000 !important;
 	.about-hello-photo {
 		max-width: 100%;
 		aspect-ratio: 1 / 1;
+		justify-self: center;
 	}
 
 	.services-card-grid,
