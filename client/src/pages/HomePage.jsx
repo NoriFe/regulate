@@ -60,7 +60,7 @@ function HomePage() {
 		/>
 		<p className="section-eyebrow section-eyebrow--soft">Welcome</p>
 		<h2 id="home-about-title" className="page-title page-title--compact">
-		   About Regulate2learn ™
+		   About Regulate2learn™
 		</h2>
 		<p style={{fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem'}}>Regulation-based support for children, teachers and parents <br></br>Learning starts with the nervous system</p>
 		<p>Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps.</p>

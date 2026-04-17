@@ -48,8 +48,8 @@
         "Regulate2learn™. Learning starts after sensory and emotional needs are met. Every child deserves regulation, safety, and connection before academic demand. Start here, then move into support tools and guided forms.",
     },
     home: {
-      beforeStartEyebrow: "Before you start exploring this website",
-      beforeStartCopy: "This website introduces the following features, including accessibility widgets like read aloud, language switching and font support, plus gentle colour themes that can feel more comfortable for autistic and ADHD users. It also offers larger cursor sizes and high contrast settings for users with visual impairments. You can find all these widgets in the bottom right corner as shown in the photo.",
+      beforeStartEyebrow: "Accessibility tools available",
+      beforeStartCopy: "Read aloud • Dyslexic font • Colour themes • Larger cursor • High contrast",
       beforeStartRead:
         "Before we start. Website features. This section introduces the main features, including accessibility widgets like read aloud, language switching and font support, plus gentle colour themes that can feel more comfortable for autistic and ADHD users. We also offer larger cursor sizes and high contrast settings for users with visual impairments. You can find all these widgets in the bottom-right corner as shown in the photo.",
       beforeStartArrowLabel: "Accessibility widgets",
@@ -103,19 +103,19 @@
       supportEyebrow: "Who I support",
       learnersEyebrow: "For learners",
       learnersTitle: "Children and young learners",
-      learnersCopy: "I support children and young learners aged 3–18 with autism, ADHD, anxiety, low confidence, sensory or emotional needs, and those building confidence in maths and KS2 SATs preparation. Before academic expectations, start with regulation supports that reduce stress and restore readiness to learn.",
+      learnersCopy: "I support children and young learners - whether neurodivergent or neurotypical - aged 3-18. This includes learners with autism, ADHD, anxiety, low confidence and sensory or emotional needs, as well as those building confidence across the curriculum, including maths and KS2 SATs preparation. Support always begins with helping them regulate and feel ready to learn before moving into academic skills.",
       learnersRead:
         "For learners. Children and young learners. I support children and young learners aged 3–18 with autism, ADHD, anxiety, low confidence, sensory or emotional needs, and those building confidence in maths and KS2 SATs preparation. Before academic expectations, start with regulation supports that reduce stress and restore readiness to learn.",
       guardiansEyebrow: "For guardians",
       guardiansTitle: "Parents and carers",
       guardiansCopy:
-        "Parents and carers who want gentle guidance to support their child's regulation and learning—including those who are autistic or have ADHD themselves. Get a clear plan: notice sensory and emotional needs, respond with support, then move into meaningful learning.",
+        "Parents and carers - including those who are neurodivergent or neurotypical - can access gentle, practical guidance to support their child’s regulation and learning. The approach is simple: notice sensory and emotional needs, respond with supportive strategies and then move into meaningful learning.",
       guardiansRead:
         "For guardians. Parents and carers. Parents and carers who want gentle guidance to support their child's regulation and learning, including those who are autistic or have ADHD themselves. Get a clear plan: notice sensory and emotional needs, respond with support, then move into meaningful learning.",
       educatorsEyebrow: "For educators",
       educatorsTitle: "Teachers and educators",
       educatorsCopy:
-        "Teachers and educators, including those who are autistic or have ADHD, who want practical, compassionate ways to support each child. Get simple, responsive ideas that support regulation, communication, and readiness to learn without adding extra pressure.",
+        "Teachers and educators - whether neurodivergent or neurotypical - can access calm, practical guidance that supports both children’s regulation, communication and readiness to learn, as well as the educators who need that support. The focus is on simple, compassionate strategies that respect sensory needs, communication differences and real family life without adding pressure.",
       educatorsRead:
         "For educators. Teachers and educators. Teachers and educators, including those who are autistic or have ADHD, who want practical, compassionate ways to support each child. Get simple, responsive ideas that support regulation, communication, and readiness to learn without adding extra pressure.",
       neurodiverseEyebrow: "For neurodiverse educators and parents",
@@ -153,7 +153,7 @@
       methodsEyebrow: "My signature methods",
       methodsTitle: "My signature methods",
       methodsCopy:
-        "Two connected approaches guide this work: RRE™ and the SenseMaths Method™. Together they support regulation, emotional safety, and confident learning.",
+        "Two connected approaches guide this work: RRE™ and the SenseMaths Method™.\nTogether they support regulation, emotional safety and confident learning.",
       methodsRead:
         "My methods. Two connected approaches guide this work: RRE and the SenseMaths Method. Together they support regulation, emotional safety, and confident learning.",
       rreReadMore: "Read more...",
@@ -300,7 +300,7 @@
       method2Kicker: "SenseMaths Method™",
       method2Title: "What is the SenseMaths Method™?",
       method2Copy:
-        "The SenseMaths Method™ is a structured, sensory-informed approach to teaching mathematics that supports children to feel calm, confident, and ready to learn.",
+        "The SenseMaths Method™ is a structured, sensory-informed approach to teaching mathematics that supports children to feel calm, confident and ready to learn.",
       method2HowTitle: "How does it work?",
       method2Principle:
         "The SenseMaths Method™ is based on a simple but powerful principle: Children learn best when they feel regulated, understood, and supported.",
@@ -815,7 +815,7 @@
       approach7: "Makaton i wizualizacje wspierające komunikację",
       benefitsTitle: "Korzyści z mojego podejścia",
       benefitsEmotionalTitle: "Korzyści emocjonalne i zdrowotne",
-      benefitsEmotional1: "Poczucie większego spokoju i regulacji emocjonalnej",
+      benefitsEmotional1: "Poczucie większego spokoju i lepsza regulacja emocjonalna",
       benefitsEmotional2: "Rozwijanie pewności siebie i wiary w siebie",
       benefitsEmotional3: "Poczucie bezpieczeństwa i zrozumienia w środowiskach nauki",
       benefitsAcademicTitle: "Korzyści akademickie",
@@ -824,7 +824,7 @@
       benefitsAcademic3: "Zwiększenie skupienia i zaangażowania w zadania edukacyjne",
       benefitsLearningTitle: "Korzyści związane z doświadczeniem uczenia się",
       benefitsLearning1: "Doświadczanie nauki w pozytywny i wspierający sposób",
-      benefitsLearning2: "Zaangażowanie poprzez strategie zmysłowe, growe i rytmiczne",
+      benefitsLearning2: "Zaangażowanie poprzez strategie zmysłowe, growe i rytm",
       benefitsLearning3: "Rozwój bardziej pozytywnego podejścia do nauki",
       methodsTitle: "Moje metody",
       method1Kicker: "RRE™ - Relational Regulation Education™",
@@ -845,7 +845,7 @@
         "SenseMaths Method™ to strukturalne, sensorycznie świadome podejście do nauczania matematyki, które wspiera dzieci, aby czuły się spokojne, pewne siebie i gotowe do nauki.",
       method2HowTitle: "Jak to działa?",
       method2Principle:
-        "SenseMaths Method™ opiera się na prostej, ale potężnej zasadzie: dzieci uczą się najlepiej, gdy czują się uregulowane, zrozumiane i wspierane.",
+        "The SenseMaths Method™ is based on a simple but powerful principle: Children learn best when they feel regulated, understood, and supported.",
       differentTitle: "Co wyróżnia moją pracę",
       differentLead: "Wierzę, że:",
       different1: "Regulacja poprzedza edukację, a relacja poprzedza korektę.",
@@ -857,7 +857,7 @@
       outcomeCopy:
         "Dzięki takiemu podejściu dzieci łatwiej się wyciszają, budują więź i angażują się w naukę w sposób spokojny, znaczący i trwały.",
       read:
-        "Witamy w Regulate2learn. Wspieram dzieci, aby czuły się spokojne, pewne siebie i gotowe do nauki. Cześć, jestem Angelika, wykwalifikowaną nauczycielką z tytułem magistra edukacji i pasją wspierania dzieci, aby czuły się spokojne, pewne siebie i gotowe do nauki. Ukończyłam studia magisterskie z wyróżnieniem w zakresie Critical Enquiry, a moja praca badawcza dotyczyła wpływu pozytywnego języka w nauczaniu dzieci o złożonych potrzebach. Moje podejście. Z mojego doświadczenia wynika, że wiele dzieci nie ma trudności dlatego, że nie potrafi się uczyć, lecz dlatego, że nie jest jeszcze gotowych do nauki. To zrozumienie doprowadziło mnie do wypracowania podejścia łączącego troskliwą filozofię opartą na relacji, silny nacisk na regulację emocjonalną i dobrostan, spójny pozytywny język, strategie sensoryczne obejmujące ruch, głęboki nacisk i rytm, naukę przez zabawę oraz nauczanie strukturalne, szczególnie w matematyce i przygotowaniu do KS2 SATs. Moje metody. Moją pracę prowadzą dwa uzupełniające się podejścia: RRE i SenseMaths Method. Co wyróżnia moją pracę. Regulacja poprzedza edukację, a relacja poprzedza korektę. Zamiast skupiać się wyłącznie na wynikach, koncentruję się na tworzeniu właściwych warunków do nauki. Oznacza to wspieranie dzieci, aby czuły się bezpiecznie i rozumiane, budowały pewność siebie, rozwijały zdolność koncentracji i doświadczały nauki w pozytywny i skuteczny sposób.",
+        "Witamy w Regulate2learn. Wspieram dzieci, aby czuły się spokojne, pewne siebie i gotowe do nauki. Cześć, jestem Angelika, wykwalifikowaną nauczycielką z tytułem magistra edukacji i pasją wspierania dzieci, aby czuły się spokojne, pewne siebie i gotowe do nauki. Ukończyłam studia magisterskie z wyróżnieniem w zakresie Critical Enquiry, a moja praca badawcza dotyczyła wpływu pozytywnego języka w nauczaniu dzieci o złożonych potrzebach. Moje podejście. Z mojego doświadczenia wynika, że wiele dzieci nie ma trudności dlatego, że nie potrafi się uczyć, lecz dlatego, że nie jest jeszcze gotowych do nauki. To zrozumienie doprowadziło mnie do wypracowania podejścia łączącego troskliwą filozofię opartą na relacji, silny nacisk na regulację emocjonalną i dobrostan, spójne podejście oparte na pozytywnym języku, strategie sensoryczne obejmujące ruch, głęboki nacisk i rytm, naukę przez zabawę oraz nauczanie strukturalne, szczególnie w matematyce i przygotowaniu do KS2 SATs. Moje metody. Moją pracę prowadzą dwa uzupełniające się podejścia: RRE i SenseMaths Method. Co wyróżnia moją pracę. Regulacja poprzedza edukację, a relacja poprzedza korektę. Zamiast skupiać się wyłącznie na wynikach, koncentruję się na tworzeniu właściwych warunków do nauki. Oznacza to wspieranie dzieci, aby czuły się bezpiecznie i rozumiane, budowały pewność siebie, rozwijały zdolność koncentracji i doświadczały nauki w pozytywny i skuteczny sposób.",
     },
     forum: {
       kicker: "Forum",
@@ -875,7 +875,7 @@
       followTitle: "Obserwuj mnie w mediach społecznościowych",
       followCopy: "Znajdziesz tam aktualizacje, materiały i wspierające treści.",
       read:
-        "Kontakt. Napisz do mnie, kiedy będziesz gotowy. Możesz skontaktować się ze mną w spokojny i prosty sposób. Jestem tutaj, aby wysłuchać i pomóc w kolejnym kroku. Wsparcie e-mail. Jeśli masz pytania o usługi, sesje lub kolejne kroki, napisz do mnie, a jasno Cię poprowadzę. Zwykle odpowiadam w ciągu 1-2 dni roboczych. Obserwuj mnie w mediach społecznościowych. Znajdziesz tam aktualizacje, materiały i wspierające treści.",
+        "Kontakt. Napisz do mnie, kiedy będziesz gotowy. Możesz skontaktować się ze mną w spokojny i prosty sposób. Jestem tutaj, aby wysłuchać i pomóc w kolejnym kroku. Wsparcie e-mail. Jeśli masz pytania o usługi, sesje lub kolejne kroki, napisz do mnie, a jasno Cię poprowadzę. Zwykle odpowiadamy w ciągu 1-2 dni roboczych. Obserwuj mnie w mediach społecznościowych. Znajdziesz tam aktualizacje, materiały i wspierające treści.",
     },
     supportPage: {
       kicker: "Usługi",
