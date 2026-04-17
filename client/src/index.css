@@ -1,3 +1,9 @@
+.about-journey-copy--right {
+	border: 2px solid #c995a4;
+	border-radius: 1.1rem;
+	padding: 1.1rem;
+	background: rgba(201, 149, 164, 0.04);
+}
 /* Centered Back to Home Button */
  .back-home-btn {
 	display: inline-block;
@@ -1717,7 +1723,10 @@ color: #000000 !important;
 	margin-top: 10px;
 }
 
-.about-page .page-copy,
+.about-page .page-copy {
+	color: rgba(247, 232, 213, 0.86);
+	text-align: justify; 
+}
 .about-page .sensemaths-list,
 .about-page .sensemaths-checklist {
 	color: rgba(247, 232, 213, 0.86);
@@ -1771,6 +1780,20 @@ color: #000000 !important;
 	gap: 1.1rem;
 	align-items: start;
 	margin-top: 0.35rem;
+}
+
+.about-journey-layout {
+	/* Ensure both columns have the same number of rows for alignment */
+}
+.about-journey-copy {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.about-journey-copy .page-title--small {
+	min-height: 2.8em;
+	display: flex;
+	align-items: flex-end;
 }
 
 .about-journey-copy {

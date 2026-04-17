@@ -8,7 +8,6 @@ function AboutPage() {
   const helloRead = [
     t("aboutPage.helloTitle"),
     t("aboutPage.helloCopy1"),
-    t("aboutPage.helloCopy2"),
   ].join(" ");
 
   const journeyRead = [
@@ -68,7 +67,6 @@ function AboutPage() {
             <p className="section-eyebrow section-eyebrow--soft">{t("aboutPage.helloEyebrow")}</p>
             <h2 className="page-title page-title--compact">{t("aboutPage.helloTitle")}</h2>
             <p className="page-copy">{t("aboutPage.helloCopy1")}</p>
-            <p className="page-copy">{t("aboutPage.helloCopy2")}</p>
           </div>
           <img
             src={helloPhoto}
@@ -84,13 +82,16 @@ function AboutPage() {
         <h2 className="page-title page-title--compact">{t("aboutPage.journeyTitle")}</h2>
         <div className="about-journey-layout">
           <div className="about-journey-copy about-journey-copy--left">
-            <p className="page-copy">{t("aboutPage.journeyCopy1")}</p>
-            <p className="page-copy">{t("aboutPage.journeyCopy2")}</p>
+            <h3 className="page-title--small">{t("aboutPage.journeySection1Heading")}</h3>
+            <p className="page-copy">{t("aboutPage.journeySection1Copy1")}</p>
+            <h3 className="page-title--small">{t("aboutPage.journeySection1Heading2")}</h3>
+            <p className="page-copy">{t("aboutPage.journeySection1Copy2")}</p>
           </div>
-
           <div className="about-journey-copy about-journey-copy--right">
-            <p className="page-copy">{t("aboutPage.journeyCopy3")}</p>
-            <p className="page-copy">{t("aboutPage.journeyCopy4")}</p>
+            <h3 className="page-title--small">{t("aboutPage.journeySection2Heading")}</h3>
+            <p className="page-copy">{t("aboutPage.journeySection2Copy1")}</p>
+            <h3 className="page-title--small">{t("aboutPage.journeySection3Heading")}</h3>
+            <p className="page-copy">{t("aboutPage.journeySection3Copy1")}</p>
           </div>
         </div>
       </section>

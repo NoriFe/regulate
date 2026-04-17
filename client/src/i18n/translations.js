@@ -245,18 +245,16 @@
       lead: "Supporting children to feel calm, confident and ready to learn.",
       helloTitle: "Hello",
       helloCopy1:
-        "Hello, I'm Angelika, a qualified teacher with experience supporting children aged 3–18, including those with autism, ADHD and additional needs. My work is rooted in creating learning environments where children feel calm, confident and ready to learn.",
-      helloCopy2:
-        "Over the years, I have developed a strong interest in understanding how emotional wellbeing, communication and regulation directly impact a child's ability to learn and succeed.",
+        "I’m Angelika - a qualified teacher specialising in supporting neurodiverse children and young people.  \nI create calm, predictable learning environments where children feel safe, regulated and ready to learn. My work is rooted in understanding how emotional wellbeing, communication and regulation shape a child’s ability to learn.\n\nI’ve spent years tutoring children in maths using approaches that reduce anxiety, build confidence and make learning feel possible again. I also lead on nurturing, regulation‑informed practice - helping create environments where children can genuinely thrive.\n\nI work with parents when needed, offering clear, grounded guidance that helps them understand their child’s strengths and needs.\n\nHaving often felt different in teaching environments, I understand the realities of sensory load, masking and overwhelm. This insight shapes the way I support both children and the adults around them.\n\nWhen children feel regulated and understood, learning becomes possible. That’s the principle at the heart of everything I do.",
       journeyTitle: "My Journey & Professional Practice",
-      journeyCopy1:
-        "My approach has been shaped by extensive experience supporting children and young learners, particularly through one to one tutoring and close, individualised work, as well as experience in both specialist and mainstream settings. It is further informed by my ongoing professional development and engagement with research.",
-      journeyCopy2:
-        "Before undertaking my Master’s in Education, I developed a strong interest in how communication impacts children’s learning and emotional engagement. As part of my teaching diploma, I carried out a professional enquiry in a mainstream school, exploring the impact of positive language when teaching mathematics. The findings showed that consistent use of positive language led to increased engagement, improved confidence and higher attainment, with pupils achieving stronger outcomes in maths.",
-      journeyCopy3:
-        "I built on this foundation during my Master’s in Education, where I conducted action research focusing on the health and wellbeing of children with complex needs. This research explored the impact of positive language alongside the implementation of celebrating small successes and introducing breathing techniques at the end of the school day. By intentionally ending each day in a calm and positive way, the approach supported children’s emotional regulation and overall wellbeing. The findings indicated a noticeable shift in behaviour, with children becoming calmer, more settled and demonstrating more positive interactions.",
-      journeyCopy4:
-        "This evolving understanding now underpins my practice and is central to everything I do. It informs both my RRE™ (Relational Regulation Education™) approach and my SenseMaths Method™.",
+      journeySection1Heading: "Starting in the classroom",
+      journeySection1Copy1: "My approach has been shaped by extensive experience supporting children and young learners, particularly through one-to-one/online tutoring and close, individualised work, as well as experience in both specialist and mainstream settings. It is further informed by my ongoing professional development and engagement with research.",
+      journeySection1Heading2: "Discovering the link between regulation and learning",
+      journeySection1Copy2: "During my teaching diploma, I carried out a professional enquiry in a mainstream school, exploring the impact of positive language when teaching mathematics. The findings showed that consistent use of positive language led to increased engagement, improved confidence and higher attainment, with pupils achieving stronger outcomes in maths.",
+      journeySection2Heading: "My Master's in Education",
+      journeySection2Copy1: "I hold a Master's in Education, during which I conducted action research focusing on the health and wellbeing of children with complex needs. This research explored the impact of positive language alongside breathing techniques, and found that children became calmer, more settled and demonstrated more positive interactions.",
+      journeySection3Heading: "Where this leads my practice today",
+      journeySection3Copy1: "This evolving understanding now underpins everything I do. It informs both my RRE™ approach and my SenseMaths Method™ - and is central to how I support every child I work with.",
       mottoLine1: "Regulation before education",
       mottoLine2: "Connection before correction",
       mottoLabel: "My Guiding Motto",
