@@ -28,6 +28,7 @@ function AppShell() {
         <Routes>
           <Route element={<PublicLayout />}>
             <Route path="main" element={<HomePage />} />
+            <Route path="/" element={<Navigate to="/main" replace />} />
             <Route
               path="framework"
               element={

@@ -1,8 +1,12 @@
+
+import { Link } from "react-router-dom";
 import ReadAloudButton from "../components/ReadAloudButton";
 import { useLanguage } from "../context/LanguageContext";
 
+
 function RREPage() {
   const { t } = useLanguage();
+
 
   return (
     <div className="page-stack rre-page">
@@ -84,6 +88,10 @@ function RREPage() {
             </ul>
           </div>
         </section>
+      </div>
+      {/* Centered Back Button */}
+      <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+        <Link to="/main" className="back-home-btn">Back</Link>
       </div>
     </div>
   );
