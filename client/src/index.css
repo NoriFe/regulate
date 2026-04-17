@@ -846,6 +846,9 @@ a {
 
 .home-before-start {
 	margin-bottom: 0.25rem;
+	min-height: 340px;
+	height: 38vh;
+	max-height: 520px;
 }
 
 .home-before-start__layout {
@@ -972,17 +975,26 @@ a {
 	z-index: 1;
 }
 
-.home-about-intro .about-journey-motto__button {
-	background: #c995a4;;
-}
+ .home-about-intro .about-journey-motto__button {
+	 background: linear-gradient(90deg, #36454F 0%, #36454F 100%);
+ }
+
+
 
 .home-about-intro .about-motto__line {
 	color: #000;
 color: #000000 !important;
 }
 
-.home-about-intro .about-motto__divider {
-	background: linear-gradient(90deg, transparent, rgba(247, 232, 213, 0.6), transparent);
+.home-about-intro .about-motto__divider {}
+.about-motto__divider {
+	width: min(100%, 7rem);
+	height: 2px;
+	margin: 0.3rem auto;
+	background: linear-gradient(90deg, transparent, #c995a4 60%, transparent);
+	border: none;
+	border-radius: 2px;
+	display: block;
 }
 
 .home-about-intro .page-title {
@@ -1684,7 +1696,7 @@ color: #000000 !important;
 .about-page .page-title,
 .about-page .page-title--small {
 	color: #f7e8d5;
-	max-width: 40rem;
+	max-width: 80rem;
 	line-height: 1.14;
 	letter-spacing: 0.01em;
 }
@@ -1803,19 +1815,10 @@ color: #000000 !important;
 	width: 100%;
 	padding: 1.2rem 1rem;
 	border-radius: 1.55rem;
-	background:
-		radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.28), transparent 34%),
-		radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.14), transparent 34%),
-		#c9a9a6;
+	background: linear-gradient(90deg, #36454F 0%, #36454F 100%);
 	border: 0;
 	box-shadow: none;
 	text-align: center;
-}
-
-.about-motto__divider {
-	width: min(100%, 7rem);
-	height: 1px;
-	background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
 }
 
 .about-motto__line {
@@ -1824,7 +1827,7 @@ color: #000000 !important;
 	font-weight: 800;
 	letter-spacing: 0.08em;
 	text-transform: none;
-	color: #111111;
+	color: #c995a4;
 	text-align: center;
 	text-wrap: balance;
 	max-width: 100%;
@@ -1833,8 +1836,14 @@ color: #000000 !important;
 	border: 0;
 	background: transparent;
 	box-shadow: none;
-	text-shadow: none;
 }
+	line-height: 1.18;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+
 
 .about-support-grid {
 	display: grid;

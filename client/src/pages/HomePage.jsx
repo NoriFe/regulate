@@ -3,8 +3,17 @@ import ReadAloudButton from "../components/ReadAloudButton";
 import { visibility } from "../config/visibility";
 import { useLanguage } from "../context/LanguageContext";
 import picture2 from "../assets/images/picture2.png";
+import backgroundImage from "../assets/images/background.jpeg";
 
 function HomePage() {
+        <div className="r2l-two-col-layout" style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', maxWidth: '1200px', margin: '2rem auto'}}>
+          <div>
+            {/* Left column content goes here */}
+          </div>
+          <div>
+            {/* Right column content goes here */}
+          </div>
+        </div>
   const { t } = useLanguage();
 
   const aboutIntroRead = [
@@ -29,53 +38,43 @@ function HomePage() {
 
   return (
     <div className="page-stack about-page home-page">
-      <section className="about-block speakable-block home-before-start" aria-label={t("home.beforeStartEyebrow")}> 
-        <ReadAloudButton
-          text={t("home.beforeStartRead")}
-        />
-        <div className="home-before-start__layout">
-          <div className="home-before-start__content">
-            <p className="section-eyebrow section-eyebrow--soft">
-              {t("home.beforeStartEyebrow")}
-            </p>
-            <p className="page-copy">
-              {t("home.beforeStartCopy")}
-            </p>
-          </div>
-          <img className="home-before-start__visual-image" src={picture2} alt={t("home.beforeStartVisualLabel")} />
+      <section
+        className="about-block speakable-block home-before-start"
+        aria-label={t("home.beforeStartEyebrow")}
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          width: '100%',
+          maxWidth: '1600px',
+          margin: '0 auto',
+        }}
+      ></section>
+
+	  <section className="about-intro speakable-block home-about-intro" aria-labelledby="home-about-title" style={{textAlign: 'left'}}>
+		<ReadAloudButton
+		  text={
+			'Regulation-based support for children, teachers and parents. Learning starts with the nervous system. Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps.'
+		  }
+		/>
+		<p className="section-eyebrow section-eyebrow--soft">Welcome</p>
+		<h2 id="home-about-title" className="page-title page-title--compact">
+		   About Regulate2learn ™
+		</h2>
+		<p style={{fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem'}}>Regulation-based support for children, teachers and parents <br></br>Learning starts with the nervous system</p>
+		<p>Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps.</p>
+	  </section>
+      
+
+      <section className="about-motto-section" aria-label="Guiding Motto">
+        <div className="about-journey-motto__button" aria-label={t("aboutPage.mottoLogoAlt")}> 
+          <p className="about-motto__line about-motto__line--top">{t("aboutPage.mottoLine1")}</p>
+          <div className="about-motto__divider" aria-hidden="true" />
+          <p className="about-motto__line about-motto__line--bottom">{t("aboutPage.mottoLine2")}</p>
         </div>
       </section>
 
-      <section className="about-intro speakable-block home-about-intro" aria-labelledby="home-about-title">
-        <ReadAloudButton
-          text={combinedIntroRead}
-        />
-        <div className="home-about-intro__layout">
-          <div>
-            <p className="section-eyebrow section-eyebrow--soft">
-              {t("aboutPage.kicker")}
-            </p>
-            <h2 id="home-about-title" className="page-title page-title--compact">
-              {t("aboutPage.title")}
-            </h2>
-          </div>
-          <div className="about-intro-motto">
-            <p className="about-journey-motto__label">{t("aboutPage.mottoLabel")}</p>
-            <div className="about-journey-motto__button" aria-label={t("aboutPage.mottoLogoAlt")}> 
-              <p className="about-motto__line about-motto__line--top">{t("aboutPage.mottoLine1")}</p>
-              <div className="about-motto__divider" aria-hidden="true" />
-              <p className="about-motto__line about-motto__line--bottom">{t("aboutPage.mottoLine2")}</p>
-            </div>
-          </div>
-        </div>
-        <div className="home-about-intro__hero" aria-label={t("aboutPage.title")}> 
-          <div className="hero__content">
-            <p className="page-copy page-copy--lg">
-              {combinedHeroParagraph}
-            </p>
-          </div>
-        </div>
-      </section>
 
       {visibility.homeFrameworkSection && (
       <section className="about-block speakable-block" aria-labelledby="framework-title">
@@ -104,8 +103,13 @@ function HomePage() {
         <p className="section-eyebrow section-eyebrow--soft">
           {t("home.methodsEyebrow")}
         </p>
-        <p id="methods-title" className="page-copy home-methods-copy">
-          {t("home.methodsCopy")}
+        <p id="methods-title" className="page-copy home-methods-copy" style={{fontSize: '1.35rem'}}>
+          {t("home.methodsCopy").split('\n').map((line, idx) => (
+            <span key={idx}>
+              {line}
+              {idx !== t("home.methodsCopy").split('\n').length - 1 && <br />}
+            </span>
+          ))}
         </p>
 
         <div className="home-dual-grid home-methods-grid">
@@ -113,7 +117,7 @@ function HomePage() {
           <ReadAloudButton
             text={`${t("aboutPage.method1Kicker")}. ${t("aboutPage.method1Title")}. ${t("aboutPage.method1Copy")}`}
           />
-          <h2 id="rre-title" className="page-title page-title--compact">
+          <h2 id="rre-title" className="page-title page-title--compact" style={{fontSize: '1.15rem'}}>
             {t("aboutPage.method1Title")}
           </h2>
           <p className="page-copy">
@@ -128,7 +132,7 @@ function HomePage() {
           <ReadAloudButton
             text={`${t("aboutPage.method2Kicker")}. ${t("aboutPage.method2Title")}. ${t("aboutPage.method2Copy")}`}
           />
-          <h2 id="sensemaths-title" className="page-title page-title--compact">
+          <h2 id="sensemaths-title" className="page-title page-title--compact" style={{fontSize: '1.15rem'}}>
             {t("aboutPage.method2Title")}
           </h2>
           <p className="page-copy">
@@ -146,7 +150,7 @@ function HomePage() {
           {t("home.supportEyebrow")}
         </p>
 
-        <div id="support-title" className="split-grid">
+        <div id="support-title" className="split-grid" style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem', width: '100%'}}>
         <div className="about-block speakable-block">
           <ReadAloudButton
             text={t("home.learnersRead")}
@@ -183,20 +187,25 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="about-block speakable-block">
-          <ReadAloudButton
-            text={t("home.neurodiverseRead")}
-          />
-          <h2 className="page-title page-title--compact">
-            {t("home.neurodiverseTitle")}
-          </h2>
-          <p className="page-copy">
-            {t("home.neurodiverseCopy")}
-          </p>
-        </div>
         </div>
       </section>
 
+      <div className="about-block speakable-block home-moved-before-start" aria-label={t("home.beforeStartEyebrow")}> 
+        <ReadAloudButton
+          text={t("home.beforeStartRead")}
+        />
+        <div className="home-before-start__layout">
+          <div className="home-before-start__content">
+            <p className="section-eyebrow section-eyebrow--soft">
+              {t("home.beforeStartEyebrow")}
+            </p>
+            <p className="page-copy">
+              {t("home.beforeStartCopy")}
+            </p>
+          </div>
+          <img className="home-before-start__visual-image" src={picture2} alt={t("home.beforeStartVisualLabel")} />
+        </div>
+      </div>
     </div>
   );
 }
