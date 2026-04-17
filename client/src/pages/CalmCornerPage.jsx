@@ -29,7 +29,7 @@ function CalmCornerPage() {
   return (
     <div className="calm-corner-page">
       <section className="calm-corner-hero speakable-block" aria-labelledby="calm-corner-title">
-        <ReadAloudButton text={t("calmCorner.read")} />
+        <ReadAloudButton text={t("calmCorner.read")}/>
         <p className="page-kicker">{t("calmCorner.eyebrow")}</p>
         <h1 id="calm-corner-title" className="page-title">
           {t("calmCorner.title")}
@@ -37,42 +37,96 @@ function CalmCornerPage() {
         <p className="page-copy page-copy--lg">{t("calmCorner.copy")}</p>
       </section>
 
-      <section className="calm-corner-player speakable-block" aria-labelledby="calm-player-title">
-        <ReadAloudButton text={t("calmCorner.playerRead")} />
-        <h2 id="calm-player-title" className="page-title page-title--compact">
-          {t("calmCorner.playerTitle")}
-        </h2>
-        <p className="page-copy">{t("calmCorner.playerCopy")}</p>
-
-        <label className="support-form__label" htmlFor="calm-video-select">
-          {t("calmCorner.chooseVideo")}
-        </label>
-        <select
-          id="calm-video-select"
-          className="support-form__input music-picker"
-          value={selectedVideo}
-          onChange={(event) => setSelectedVideo(event.target.value)}
+      <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {/* Calming Video Player */}
+        <section
+          className="calm-corner-player speakable-block panel"
+          aria-labelledby="calm-player-title"
+          style={{
+            flex: '1 1 340px',
+            minWidth: 320,
+            maxWidth: 600,
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '480px',
+            background: 'linear-gradient(135deg, rgba(249, 147, 120, 0.16), rgba(0, 27, 38, 0.92))',
+          }}
         >
-          {videos.map((video) => (
-            <option key={video.embedUrl} value={video.embedUrl}>
-              {t(video.key)}
-            </option>
-          ))}
-        </select>
+          <ReadAloudButton text={t("calmCorner.playerRead")}/>
+          <h2 id="calm-player-title" className="page-title page-title--compact" style={{ marginBottom: '1rem' }}>
+            {t("calmCorner.playerTitle")}
+          </h2>
+          <p className="page-copy" style={{ marginBottom: '1rem', textAlign: 'center' }}>{t("calmCorner.playerCopy")}</p>
 
-        <div className="music-video-wrap">
-          <iframe
-            className="music-video-frame"
-            src={selectedVideo}
-            title={t("calmCorner.videoTitle")}
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
-        <p className="field-helper">{t("calmCorner.sourceNote")}</p>
-      </section>
+          <label className="support-form__label" htmlFor="calm-video-select" style={{ marginBottom: '0.5rem' }}>
+            {t("calmCorner.chooseVideo")}
+          </label>
+          <select
+            id="calm-video-select"
+            className="support-form__input music-picker"
+            value={selectedVideo}
+            onChange={(event) => setSelectedVideo(event.target.value)}
+            style={{ marginBottom: '1rem', width: '100%' }}
+          >
+            {videos.map((video) => (
+              <option key={video.embedUrl} value={video.embedUrl}>
+                {t(video.key)}
+              </option>
+            ))}
+          </select>
+
+          <div className="music-video-wrap" style={{ width: '100%', aspectRatio: '16/9', marginBottom: '1rem' }}>
+            <iframe
+              className="music-video-frame"
+              src={selectedVideo}
+              title={t("calmCorner.videoTitle")}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              style={{ width: '100%', height: '100%', borderRadius: '1rem', border: 'none', background: '#fff' }}
+            />
+          </div>
+          <p className="field-helper" style={{ textAlign: 'center', color: '#64748b' }}>{t("calmCorner.sourceNote")}</p>
+        </section>
+
+        {/* Teacher Corner Container */}
+        <aside
+          className="teacher-corner-link-block speakable-block panel"
+          aria-labelledby="teacher-corner-title"
+          style={{
+            flex: '1 1 340px',
+            minWidth: 320,
+            maxWidth: 600,
+            minHeight: '480px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'linear-gradient(135deg, rgba(249, 147, 120, 0.16), rgba(0, 27, 38, 0.92))',
+            border: '1px solid rgba(247, 232, 213, 0.12)',
+            boxShadow: '0 14px 30px rgba(0, 0, 0, 0.24)',
+            borderRadius: '1.25rem',
+            color: '#f7e8d5',
+            padding: '2rem',
+          }}
+        >
+          <ReadAloudButton text="Go to Teacher Corner" />
+          <h2 id="teacher-corner-title" className="page-title page-title--compact">Teacher Corner</h2>
+          <p className="page-copy" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+            Explore resources and tools for educators. Try the interactive paint tool and more!
+          </p>
+          <a
+            href="/teacher-corner"
+            className="services-cta__button"
+          >
+            Go to Teacher Corner
+          </a>
+        </aside>
+      </div>
     </div>
   );
 }

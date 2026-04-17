@@ -15,6 +15,7 @@ import RegisterPage from "./pages/RegisterPage";
 import UserFormPage from "./pages/UserFormPage";
 import SupportPage from "./pages/SupportPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import TeacherCornerPage from "./pages/TeacherCornerPage";
 import { visibility } from "./config/visibility";
 import { AccessibilityProvider } from "./context/AccessibilityContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -45,6 +46,7 @@ function AppShell() {
             <Route path="user-form" element={<UserFormPage />} />
             <Route path="services" element={<SupportPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="teacher-corner" element={<TeacherCornerPage />} />
           </Route>
           <Route path="home" element={<Navigate to="/main" replace />} />
           <Route path="*" element={<NotFoundPage />} />

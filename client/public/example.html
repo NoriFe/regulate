@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teacher Corner — Paint</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: transparent; padding: 0; color: #f0e6c8; }
+
+    h1 {
+      font-size: 20px; font-weight: 500; color: #2C2C2A;
+      margin-bottom: 14px;
+    }
+
+    #toolbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      padding: 18px 2vw 12px 2vw; background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 0; margin-bottom: 0;
+      width: 100vw; max-width: 100vw; box-sizing: border-box;
+    }
+
+    .tool-group { display: flex; align-items: center; gap: 8px; }
+    .sep { width: 0.5px; height: 28px; background: rgba(255,255,255,0.12); }
+    label.tool-label { font-size: 12px; color: #f0e6c8; }
+
+    .color-btn {
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 2px solid transparent; cursor: pointer; transition: transform 0.1s;
+    }
+    .color-btn:hover { transform: scale(1.15); }
+    .color-btn.active { border-color: #f1c85c; }
+
+    #custom-color {
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 1px solid #ccc; cursor: pointer; padding: 0;
+    }
+
+    input[type=range] { width: 80px; }
+    #size-out, #opacity-out, #scale-out { font-size: 12px; color: #f0e6c8; min-width: 28px; }
+
+    button.tool-btn {
+      padding: 5px 12px; font-size: 13px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18); background: #16213a;
+      color: #f0e6c8; cursor: pointer; font-weight: 500;
+      transition: background 0.15s, color 0.15s, border 0.15s;
+    }
+    button.tool-btn:hover { background: #1b263b; }
+    button.tool-btn.active {
+      background: #f1c85c; border-color: #f1c85c; color: #16213a;
+    }
+
+    #upload-btn {
+      padding: 5px 14px; font-size: 13px; border-radius: 8px;
+      background: #534AB7; color: #f0e6c8; border: none;
+      cursor: pointer; font-weight: 500;
+      transition: background 0.15s;
+    }
+    #upload-btn:hover { background: #3C3489; }
+
+    #canvas-wrap {
+      position: relative; width: 100vw; min-height: 420px;
+      border: 1.5px solid #22304a;
+      border-radius: 0;
+      overflow: hidden; background: #16213a;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0;
+      box-sizing: border-box;
+      max-width: 100vw;
+    }
+
+    #bg-canvas, #draw-canvas {
+      position: absolute; top: 0; left: 0;
+    }
+    #bg-canvas { z-index: 1; }
+    #draw-canvas { z-index: 2; }
+
+    #placeholder {
+      color: #888; font-size: 15px; text-align: center;
+      pointer-events: none; z-index: 3; padding: 2rem;
+      background: transparent;
+    }
+    #placeholder span { font-size: 36px; display: block; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;color:#c995a4;margin-top:10px;">Calming paint corner</h1>
+
+  <div id="toolbar">
+    <div class="tool-group">
+      <button id="upload-btn" onclick="document.getElementById('file-in').click()">+ Pick picture</button>
+      <input type="file" id="file-in" accept="image/*" style="display:none">
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <label class="tool-label">Colours</label>
+      <div class="color-btn active" style="background:#E24B4A" data-color="#E24B4A" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#378ADD" data-color="#378ADD" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#1D9E75" data-color="#1D9E75" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#EF9F27" data-color="#EF9F27" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#D4537E" data-color="#D4537E" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#7F77DD" data-color="#7F77DD" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#2C2C2A" data-color="#2C2C2A" onclick="setColor(this)"></div>
+      <div class="color-btn" style="background:#ffffff;border:1px solid #ccc" data-color="#ffffff" onclick="setColor(this)"></div>
+      <input type="color" id="custom-color" title="Custom colour" value="#E24B4A" oninput="setCustomColor(this)">
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <label class="tool-label">Size</label>
+      <input type="range" id="brush-size" min="1" max="60" value="12" step="1"
+        oninput="document.getElementById('size-out').textContent=this.value">
+      <span id="size-out">12</span>
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <label class="tool-label">Opacity</label>
+      <input type="range" id="opacity" min="10" max="100" value="100" step="1"
+        oninput="document.getElementById('opacity-out').textContent=this.value+'%';">
+      <span id="opacity-out">100%</span>
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <button class="tool-btn active" id="btn-brush" onclick="setTool('brush')">Brush</button>
+      <button class="tool-btn" id="btn-eraser" onclick="setTool('eraser')">Eraser</button>
+      <button class="tool-btn" id="btn-fill" onclick="setTool('fill')">Fill</button>
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <button class="tool-btn" onclick="undoLast()">Undo</button>
+      <button class="tool-btn" onclick="clearDraw()">Clear paint</button>
+      <button class="tool-btn" onclick="downloadImg()">Save</button>
+    </div>
+    <div class="sep"></div>
+    <div class="tool-group">
+      <label class="tool-label">Resize</label>
+      <input type="range" id="img-scale" min="10" max="200" value="100" step="1"
+        oninput="resizeImage(this.value)">
+      <span id="scale-out">100%</span>
+    </div>
+  </div>
+
+  <div id="canvas-wrap">
+    <div id="placeholder">
+      <span>🖼</span>Pick a picture above, then paint away!
+    </div>
+    <canvas id="bg-canvas"></canvas>
+    <canvas id="draw-canvas"></canvas>
+  </div>
+
+  <script>
+    const bgC   = document.getElementById('bg-canvas');
+    const drawC = document.getElementById('draw-canvas');
+    const bgCtx = bgC.getContext('2d');
+    const dCtx  = drawC.getContext('2d');
+    const wrap  = document.getElementById('canvas-wrap');
+    const ph    = document.getElementById('placeholder');
+
+    let tool = 'brush', color = '#E24B4A', painting = false;
+    let undoStack = [], lastX, lastY;
+    let imgW = 0, imgH = 0;
+    let originalImg = null;
+
+    function setTool(t) {
+      tool = t;
+      ['brush','eraser','fill'].forEach(x =>
+        document.getElementById('btn-' + x).classList.remove('active')
+      );
+      document.getElementById('btn-' + t).classList.add('active');
+    }
+
+    function setColor(el) {
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      color = el.dataset.color;
+      document.getElementById('custom-color').value = color;
+    }
+
+    function setCustomColor(el) {
+      color = el.value;
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+    }
+
+    function saveUndo() {
+      if (undoStack.length >= 20) undoStack.shift();
+      undoStack.push(dCtx.getImageData(0, 0, drawC.width, drawC.height));
+    }
+
+    function undoLast() {
+      if (!undoStack.length) return;
+      dCtx.putImageData(undoStack.pop(), 0, 0);
+    }
+
+    function clearDraw() {
+      saveUndo();
+      dCtx.clearRect(0, 0, drawC.width, drawC.height);
+    }
+
+    document.getElementById('file-in').addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        const img = new Image();
+        img.onload = () => {
+          const maxW = wrap.offsetWidth || 700;
+          const maxH = 520;
+          let w = img.width, h = img.height;
+          const ratio = Math.min(maxW / w, maxH / h, 1);
+          w = Math.round(w * ratio);
+          h = Math.round(h * ratio);
+          imgW = w; imgH = h;
+          bgC.width = drawC.width = w;
+          bgC.height = drawC.height = h;
+          bgC.style.width = drawC.style.width = w + 'px';
+          bgC.style.height = drawC.style.height = h + 'px';
+          wrap.style.height = h + 'px';
+          bgCtx.drawImage(img, 0, 0, w, h);
+          dCtx.clearRect(0, 0, w, h);
+          undoStack = [];
+          ph.style.display = 'none';
+          originalImg = img;
+        };
+        img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function getPos(e) {
+      const rect = drawC.getBoundingClientRect();
+      const src  = e.touches ? e.touches[0] : e;
+      return { x: src.clientX - rect.left, y: src.clientY - rect.top };
+    }
+
+    function brushSize()  { return parseInt(document.getElementById('brush-size').value); }
+    function opacityVal() { return parseInt(document.getElementById('opacity').value) / 100; }
+    function paintColor() {
+      const r = parseInt(color.slice(1,3), 16);
+      const g = parseInt(color.slice(3,5), 16);
+      const b = parseInt(color.slice(5,7), 16);
+      return `rgba(${r},${g},${b},${opacityVal()})`;
+    }
+
+    function startPaint(e) {
+      if (!imgW) return;
+      e.preventDefault();
+      if (tool === 'fill') { saveUndo(); floodFill(e); return; }
+      saveUndo();
+      painting = true;
+      const p = getPos(e);
+      lastX = p.x; lastY = p.y;
+      dCtx.beginPath();
+      dCtx.arc(lastX, lastY, brushSize() / 2, 0, Math.PI * 2);
+      dCtx.fillStyle = paintColor();
+      dCtx.fill();
+    }
+
+    function doPaint(e) {
+      if (!painting) return;
+      e.preventDefault();
+      const p    = getPos(e);
+      const size = brushSize();
+      dCtx.globalCompositeOperation = tool === 'eraser' ? 'destination-out' : 'source-over';
+      dCtx.globalAlpha  = tool === 'eraser' ? 1 : opacityVal();
+      dCtx.strokeStyle  = color;
+      dCtx.lineWidth    = size;
+      dCtx.lineCap      = 'round';
+      dCtx.lineJoin     = 'round';
+      dCtx.beginPath();
+      dCtx.moveTo(lastX, lastY);
+      dCtx.lineTo(p.x, p.y);
+      dCtx.stroke();
+      lastX = p.x; lastY = p.y;
+      dCtx.globalCompositeOperation = 'source-over';
+      dCtx.globalAlpha = 1;
+    }
+
+    function endPaint() { painting = false; }
+
+    function floodFill(e) {
+      const p  = getPos(e);
+      const x  = Math.round(p.x), y = Math.round(p.y);
+      const w  = drawC.width, h = drawC.height;
+      const id = dCtx.getImageData(0, 0, w, h);
+      const d  = id.data;
+      const i0 = (y * w + x) * 4;
+      const [tr, tg, tb, ta] = [d[i0], d[i0+1], d[i0+2], d[i0+3]];
+      const r2 = parseInt(color.slice(1,3), 16);
+      const g2 = parseInt(color.slice(3,5), 16);
+      const b2 = parseInt(color.slice(5,7), 16);
+      const a2 = Math.round(opacityVal() * 255);
+      if (tr===r2 && tg===g2 && tb===b2 && ta===a2) return;
+      const stack   = [[x, y]];
+      const visited = new Uint8Array(w * h);
+      const tol     = 40;
+      while (stack.length) {
+        const [cx, cy] = stack.pop();
+        if (cx < 0 || cx >= w || cy < 0 || cy >= h) continue;
+        const i = cy * w + cx;
+        if (visited[i]) continue;
+        visited[i] = 1;
+        const pi = i * 4;
+        const dr = Math.abs(d[pi]-tr), dg = Math.abs(d[pi+1]-tg);
+        const db = Math.abs(d[pi+2]-tb), da = Math.abs(d[pi+3]-ta);
+        if (dr + dg + db + da > tol * 4) continue;
+        d[pi]=r2; d[pi+1]=g2; d[pi+2]=b2; d[pi+3]=a2;
+        stack.push([cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]);
+      }
+      dCtx.putImageData(id, 0, 0);
+    }
+
+    function downloadImg() {
+      const out = document.createElement('canvas');
+      out.width = imgW; out.height = imgH;
+      const ctx = out.getContext('2d');
+      ctx.drawImage(bgC, 0, 0);
+      ctx.drawImage(drawC, 0, 0);
+      const a = document.createElement('a');
+      a.download = 'teacher-corner-painting.png';
+      a.href = out.toDataURL();
+      a.click();
+    }
+
+    function resizeImage(scale) {
+      if (!originalImg) return;
+      document.getElementById('scale-out').textContent = scale + '%';
+      const ratio = scale / 100;
+      const maxW = wrap.offsetWidth || 700;
+      let w = Math.round(originalImg.width * ratio);
+      let h = Math.round(originalImg.height * ratio);
+      if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+      imgW = w; imgH = h;
+      bgC.width = drawC.width = w;
+      bgC.height = drawC.height = h;
+      bgC.style.width = drawC.style.width = w + 'px';
+      bgC.style.height = drawC.style.height = h + 'px';
+      wrap.style.height = h + 'px';
+      bgCtx.clearRect(0, 0, w, h);
+      bgCtx.drawImage(originalImg, 0, 0, w, h);
+      dCtx.clearRect(0, 0, w, h);
+      undoStack = [];
+    }
+
+    drawC.addEventListener('mousedown',  startPaint);
+    drawC.addEventListener('mousemove',  doPaint);
+    drawC.addEventListener('mouseup',    endPaint);
+    drawC.addEventListener('mouseleave', endPaint);
+    drawC.addEventListener('touchstart', startPaint, { passive: false });
+    drawC.addEventListener('touchmove',  doPaint,    { passive: false });
+    drawC.addEventListener('touchend',   endPaint);
+  </script>
+
+</body>
+</html>
