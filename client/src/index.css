@@ -1,3 +1,48 @@
+/* Responsive layout for SenseMaths details section */
+.sensemaths-details__visual, .sensemaths-details__content {
+	margin: 0;
+}
+.sensemaths-details__visual {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 120px;
+	margin-bottom: 0;
+}
+.sensemaths-details__content {
+	flex: 1 1 320px;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#sensemaths-details {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	/* background removed as requested */
+	border-radius: 1.5rem;
+	box-shadow: 0 8px 32px rgba(31, 49, 80, 0.08);
+	padding: 2.2rem 2rem;
+	margin: 2.5rem 0 2.2rem 0;
+	flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+	#sensemaths-details {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1.5rem;
+		padding: 1.2rem 0.7rem;
+	}
+	.sensemaths-details__visual {
+		justify-content: flex-start;
+		margin-bottom: 0.5rem;
+	}
+	.sensemaths-details__content {
+		align-items: flex-start;
+	}
+}
 /* Responsive grid for Specialist Sessions on SupportPage only */
 .support-sessions-grid {
 	display: grid;
@@ -3006,8 +3051,8 @@ color: #000000 !important;
 	gap: clamp(1.25rem, 3vw, 2.5rem);
 	padding: clamp(1.5rem, 3vw, 3rem);
 	border-radius: 1.6rem;
-	background: linear-gradient(180deg, rgba(0, 27, 38, 0.92), rgba(0, 1, 19, 0.98));
-	border: 1px solid rgba(247, 232, 213, 0.08);
+	/* background removed as requested */
+	border: 1px solid #c995a4;
 	box-shadow: none;
 	backdrop-filter: none;
 }

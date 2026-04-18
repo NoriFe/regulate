@@ -28,13 +28,7 @@ function SenseMathsPage() {
 
       <section id="sensemaths-details" className="services-band speakable-block" aria-labelledby="sensemaths-band-title">
         <ReadAloudButton text={t("aboutPage.method2HowTitle") + ". " + t("aboutPage.method2Principle") } />
-        <div className="services-band__visual" aria-hidden="true">
-          <div className="services-band__panel">
-            <p>{t("aboutPage.method2Kicker")}</p>
-            <strong>{t("aboutPage.mottoLine1")}<br />{t("aboutPage.mottoLine2")}</strong>
-          </div>
-        </div>
-        <div className="services-band__content">
+        <div className="sensemaths-details__content">
           <p className="services-band__eyebrow">{t("aboutPage.method2HowTitle")}</p>
           <h2 id="sensemaths-band-title" className="services-band__title">
             {t("aboutPage.method2HowTitle")}
@@ -42,10 +36,15 @@ function SenseMathsPage() {
           <p className="services-band__copy">
             {t("aboutPage.method2Principle")}
           </p>
+          <div style={{ fontWeight: 700, fontSize: '1.13rem', margin: '1.1rem 0 0.7rem 0', color: '#c995a4' }}>
+            {t("aboutPage.differentTitle")}
+          </div>
           <ul className="services-band__list">
+            <li>{t("aboutPage.different1")}</li>
             <li>{t("aboutPage.different2")}</li>
             <li>{t("aboutPage.different3")}</li>
             <li>{t("aboutPage.different4")}</li>
+            <li>{t("aboutPage.different5")}</li>
           </ul>
         </div>
       </section>
