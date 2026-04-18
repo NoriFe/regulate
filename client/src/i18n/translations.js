@@ -371,7 +371,7 @@
       metric3Item2: "Engage through sensory, play-based, and rhythmic strategies",
       metric3Item3: "Develop a more positive relationship with learning",
       ctaEyebrow: "Ready to begin?",
-      ctaTitle: "Let's talk about your child's needs",
+      ctaTitle: "Let's talk about it",
       ctaCopy:
         "If you'd like to learn more about how my sessions can support your child, I'd love to discuss their individual needs and create a plan that works for your family.",
       ctaButton: "Get in Touch",

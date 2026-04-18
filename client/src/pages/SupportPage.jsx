@@ -114,6 +114,65 @@ Focus: regulation, confidence, connection and learning that sticks.
           </a>
         </div>
       </section>
+
+      {/* Pricing Section as Cards */}
+      <section className="pricing-container speakable-block" aria-labelledby="pricing-title" style={{
+        margin: '0.25rem 0',
+        background: 'radial-gradient(circle at 30% 20%, rgba(0, 105, 126, 0.38), transparent 34%), radial-gradient(circle at 74% 62%, rgba(249, 147, 120, 0.26), transparent 26%), linear-gradient(135deg, rgba(247, 232, 213, 0.04), rgba(0, 27, 38, 0.82))',
+        borderRadius: '1.2rem',
+        padding: '2.5rem 2.5rem',
+        color: '#f7e8d5'
+      }}>
+        <h2 id="pricing-title" style={{fontSize: '2.2rem', marginBottom: '1.2rem'}}>Pricing</h2>
+        <p style={{marginBottom: '2.2rem'}}>At Regulate2Learn, pricing reflects the depth of support offered to neurodivergent and neurotypical children, parents and educators. Every session is regulation‑first, sensory-aware and grounded in compassion - never pressure.</p>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '2.5rem', marginBottom: '2.5rem'}}>
+          {/* Card 1 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>Regulation‑Based Tutoring (1:1)</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£40-£70 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>Support for autistic, ADHD, anxious, sensory‑sensitive, overwhelmed or shutdown‑prone learners.<br />Includes RRE‑based curriculum support and SenseMaths.<br />Focus: regulation, confidence, connection, and learning that sticks.</div>
+          </div>
+          {/* Card 2 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>Parent Support & Coaching</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£45-£80 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>Gentle, practical guidance for behaviour, regulation and learning at home.<br />Understand your child’s nervous system, reduce overwhelm and build connection.</div>
+          </div>
+          {/* Card 3 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>Teacher Support (neurodivergent teachers)</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£40-£75 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>Regulation‑first teaching strategies, sensory‑friendly adjustments, scripts for tricky moments, and confidence‑building for teachers who don’t fit the stereotype.</div>
+          </div>
+          {/* Card 4 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>Behaviour Understanding Sessions</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£45-£85 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>For parents and teachers who want to understand shutdowns, meltdowns, fidgeting, avoidance, talking back, masking, transitions and overwhelm.<br />Behaviour is communication - we decode what it’s saying.</div>
+          </div>
+          {/* Card 5 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>SenseMaths Sessions</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£35-£65 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>Maths support for neurodivergent learners using sensory‑based, relational, regulation‑first methods.</div>
+          </div>
+          {/* Card 6 */}
+          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)', border: '2px solid #c995a4'}}>
+            <h3 style={{margin: 0, fontSize: '1.25rem'}}>Curriculum Support Across Subjects</h3>
+            <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£30-£55 per hour</div>
+            <div style={{fontSize: '0.98rem'}}>Reading, writing, maths and general learning support - always through a regulation‑first lens.</div>
+          </div>
+        </div>
+        <h3 style={{fontSize: '1.3rem'}}>What’s Included in Every Session</h3>
+        <ul style={{marginBottom: 0, paddingLeft: '1.2rem', fontSize: '1.05rem', listStyle: 'none', paddingInlineStart: 0}}>
+          <li>Regulation‑first approach</li>
+          <li>Sensory‑aware strategies</li>
+          <li>Connection‑based teaching</li>
+          <li>Personalised adjustments</li>
+          <li>Calm, compassionate support</li>
+          <li>Optional follow‑up notes (service‑dependent)</li>
+        </ul>
+      </section>
     </div>
   );
 }
