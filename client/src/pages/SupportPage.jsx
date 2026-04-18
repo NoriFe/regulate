@@ -5,28 +5,15 @@ import picture1 from "../assets/images/picture1.png";
 function SupportPage() {
   const { t } = useLanguage();
 
+
   return (
     <div className="page-stack services-page">
-      <section className="services-intro speakable-block" aria-labelledby="services-intro-title">
+      <section className="services-hero speakable-block" aria-labelledby="services-hero-eyebrow" style={{margin: '0.25rem 0'}}>
         <ReadAloudButton text={t("supportPage.read")} />
-        <div className="services-intro__content">
-          <p className="services-intro__eyebrow">{t("supportPage.kicker")}</p>
-          <h1 id="services-intro-title" className="services-intro__title">
-            {t("supportPage.heroTitle")}
-          </h1>
-        </div>
-      </section>
-
-      <section className="services-hero speakable-block" aria-labelledby="services-hero-eyebrow">
-        <ReadAloudButton text={t("supportPage.read")} />
-
         <div className="services-hero__content">
-          <p id="services-hero-eyebrow" className="services-hero__eyebrow">
-            {t("supportPage.heroEyebrow")}
-          </p>
+          <p id="services-hero-eyebrow" className="services-hero__eyebrow">{t("supportPage.heroEyebrow")}</p>
           <p className="services-hero__copy">{t("supportPage.heroCopy")}</p>
-
-          <div className="services-chip-row" aria-label={t("supportPage.heroEyebrow")}>
+          <div className="services-chip-row" aria-label={t("supportPage.heroEyebrow")}> 
             <span className="services-chip">{t("supportPage.chip1")}</span>
             <span className="services-chip">{t("supportPage.chip2")}</span>
             <span className="services-chip">{t("supportPage.chip3")}</span>
@@ -34,40 +21,87 @@ function SupportPage() {
             <span className="services-chip">{t("supportPage.chip5")}</span>
           </div>
         </div>
-
-        <div className="services-hero__visual" aria-hidden="true">
-          <img className="services-hero__image" src={picture1} alt="" />
+        <div className="services-hero__visual" aria-hidden="true" style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0, margin: 0, width: '100%', height: '100%'}}>
+          <img
+            src={picture1}
+            alt=""
+            style={{
+              width: '100%',
+              height:  'auto',
+              maxWidth: '360px',
+              maxHeight: '460px',
+              borderTopRightRadius: '2.5rem',
+              borderBottomRightRadius: '2.5rem',
+              WebkitMaskImage: 'linear-gradient(to left, black 90%, transparent 100%)',
+              maskImage: 'linear-gradient(to left, black 80%, transparent 100%)',
+            }}
+          />
         </div>
       </section>
 
-      <section id="services-details" className="services-band speakable-block" aria-labelledby="services-band-title">
-        <ReadAloudButton text={t("supportPage.bandCopy")} />
+      <section className="services-intro speakable-block" aria-labelledby="services-intro-title" style={{margin: '0.25rem 0'}}>
+        <ReadAloudButton text="About Regulate2Learn. Regulate2Learn was created for children and adults who don’t fit the 'typical' mould — the neurodivergent, the overwhelmed, the shy, the sensory‑sensitive, the burnt‑out, the misunderstood. I support children, parents, and teachers through a regulation‑first approach that respects the nervous system and the human behind it." />
+        <div className="services-intro__content">
+          <p className="services-intro__eyebrow">{t("supportPage.kicker")}</p>
+          <h1 id="services-intro-title" className="services-intro__title" style={{fontSize: '2rem', lineHeight: 1.14}}>Regulation‑based 1:1 tutoring, available both in person and online</h1>
+          <p style={{marginTop:5}}>
+            For neurodivergent children: ADHD, autism, sensory needs, anxiety, shutdowns, overwhelm.
+Curriculum support through RRE + SenseMaths.
+Focus: regulation, confidence, connection and learning that sticks.
+          </p>
+        </div>
+      </section>
 
-        <div className="services-band__visual" aria-hidden="true">
-          <div className="services-band__panel">
-            <p>{t("supportPage.bandPanelEyebrow")}</p>
-            <strong>{t("supportPage.bandPanelTitle")}</strong>
+      <section id="services-details" className="services-band speakable-block" aria-labelledby="services-band-title" style={{margin: '0.25rem 0'}}>
+        <ReadAloudButton text={t("supportPage.bandCopy")} />
+        <div className="services-band__content">
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'stretch'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'stretch', height: '100%'}}>
+              <h2 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>Parent Support & Coaching</h2>
+              <p>Clear, practical support for behaviour, regulation, and learning at home. Understand your child’s nervous system. Reduce overwhelm. Build connection.</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'stretch', height: '100%'}}>
+              <h2 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>Teacher Support </h2>
+              <p>Regulation‑first teaching strategies. Sensory‑friendly classroom adjustments. Scripts for tricky moments. Support for overwhelm and masking. Confidence‑building for teachers who don’t fit the stereotype.</p>
+            </div>
           </div>
         </div>
+      </section>
 
+      {/* New 4-column section */}
+      <section
+        className="services-band services-band--3col speakable-block"
+        aria-label="Specialist Sessions"
+        style={{
+          background:
+            'radial-gradient(circle at 30% 20%, rgba(0, 105, 126, 0.38), transparent 34%), ' +
+            'radial-gradient(circle at 74% 62%, rgba(249, 147, 120, 0.26), transparent 26%), ' +
+            'linear-gradient(135deg, rgba(247, 232, 213, 0.04), rgba(0, 27, 38, 0.82))',
+          borderRadius: '1.2rem',
+          padding: '2.5rem 2.5rem',
+          margin: '0.25rem 0',
+        }}
+      >
         <div className="services-band__content">
-          <p className="services-band__eyebrow">{t("supportPage.bandEyebrow")}</p>
-          <h2 id="services-band-title" className="services-band__title">
-            {t("supportPage.bandTitle")}
-          </h2>
-          <p className="services-band__copy">{t("supportPage.bandCopy")}</p>
-
-          <ul className="services-band__list">
-            <li>{t("supportPage.bandItem1")}</li>
-            <li>{t("supportPage.bandItem2")}</li>
-            <li>{t("supportPage.bandItem3")}</li>
-            <li>{t("supportPage.bandItem4")}</li>
-            <li>{t("supportPage.bandItem5")}</li>
-          </ul>
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', alignItems: 'stretch'}}>
+            <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+              <h3 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>Behaviour Understanding Sessions</h3>
+              <p style={{margin: '0.5rem 0 0 0'}}>For parents and teachers who want to understand:<br/>shutdowns, meltdowns, fidgeting, avoidance, talking back, masking, transitions, overwhelm.</p>
+              <p style={{margin: '0.5rem 0 0 0' }}>Behaviour is communication.<br/>I help you understand what it’s saying.</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+              <h3 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>SenseMaths Sessions</h3>
+              <p style={{margin: '0.5rem 0 0 0'}}>Maths support for neurodivergent learners using sensory‑based, relational, regulation‑first methods.</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+              <h3 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>Curriculum Support Across Subjects</h3>
+              <p style={{margin: '0.5rem 0 0 0'}}>Reading, writing, maths and general learning support - always through a regulation‑first lens.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="services-cta speakable-block" aria-labelledby="services-cta-title">
+      <section className="services-cta speakable-block" aria-labelledby="services-cta-title" style={{margin: '0.25rem 0'}}>
         <ReadAloudButton text={t("supportPage.ctaCopy")} />
         <div className="services-cta__content">
           <p className="services-cta__eyebrow">{t("supportPage.ctaEyebrow")}</p>

@@ -55,7 +55,7 @@ function HomePage() {
 	  <section className="about-intro speakable-block home-about-intro" aria-labelledby="home-about-title" style={{textAlign: 'left'}}>
 		<ReadAloudButton
 		  text={
-			'Regulation-based support for children, teachers and parents. Learning starts with the nervous system. Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps.'
+			'Regulation-based support for children, teachers and parents. Learning starts with the nervous system. Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps. Regulate2Learn was created for children and adults who don’t fit the "typical" mould - the neurodivergent, the overwhelmed, the shy, the sensory‑sensitive, the burnt‑out, the misunderstood. I support children, parents and teachers through a regulation‑first approach that respects the nervous system and the human behind it.'
 		  }
 		/>
 		<p className="section-eyebrow section-eyebrow--soft">Welcome</p>
@@ -64,6 +64,8 @@ function HomePage() {
 		</h2>
 		<p style={{fontSize: '1.35rem', fontWeight: 500, marginBottom: '0.5rem'}}>Regulation-based support for children, teachers and parents <br></br>Learning starts with the nervous system</p>
 		<p>Supporting children to feel calm, confident and ready to learn. Children cannot access learning until sensory and emotional needs are met. Regulate2learn™ gives children and guardians a clear, calming path to regulation first, then learning support, community and practical next steps.</p>
+		<p>Regulate2Learn was created for children and adults who don’t fit the "typical" mould - the neurodivergent, the overwhelmed, the shy, the sensory‑sensitive, the burnt‑out, the misunderstood.</p>
+		<p>I support children, parents and teachers through a regulation‑first approach that respects the nervous system and the human behind it.</p>
 	  </section>
       
 

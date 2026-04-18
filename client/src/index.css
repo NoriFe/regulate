@@ -1725,7 +1725,9 @@ color: #000000 !important;
 
 .about-page .page-copy {
 	color: rgba(247, 232, 213, 0.86);
-	text-align: justify; 
+	text-align: justify;
+	margin: 0;
+	padding: 0;
 }
 .about-page .sensemaths-list,
 .about-page .sensemaths-checklist {
@@ -2954,7 +2956,7 @@ color: #000000 !important;
 }
 
 .services-band {
-	display: grid;
+	
 	grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
 	gap: clamp(1.25rem, 3vw, 2.5rem);
 	padding: clamp(1.5rem, 3vw, 3rem);

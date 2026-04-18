@@ -66,7 +66,11 @@ function AboutPage() {
           <div className="about-hello-text">
             <p className="section-eyebrow section-eyebrow--soft">{t("aboutPage.helloEyebrow")}</p>
             <h2 className="page-title page-title--compact">{t("aboutPage.helloTitle")}</h2>
-            <p className="page-copy">{t("aboutPage.helloCopy1")}</p>
+            {t("aboutPage.helloCopy1")
+              .split(/\n\n+/)
+              .map((para, idx) => (
+                <p className="page-copy" key={idx}>{para.trim()}</p>
+              ))}
           </div>
           <img
             src={helloPhoto}
