@@ -5,40 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Teacher Corner — Paint</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: sans-serif; background: transparent; padding: 0; color: #f0e6c8; }
-
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: sans-serif;
+      background: transparent;
+      color: #f0e6c8;
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+    }
     h1 {
       font-size: 20px; font-weight: 500; color: #2C2C2A;
       margin-bottom: 14px;
+      flex: 0 0 auto;
     }
-
     #toolbar {
-      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+      display: flex; flex-wrap: nowrap; align-items: center; gap: 10px;
       padding: 18px 2vw 12px 2vw; background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1); border-radius: 0; margin-bottom: 0;
-      width: 100vw; max-width: 100vw; box-sizing: border-box;
+      width: 100%; max-width: 100%; box-sizing: border-box;
+      overflow-x: auto; overflow-y: hidden;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
     }
-
+    #toolbar::-webkit-scrollbar { display: none; }
     .tool-group { display: flex; align-items: center; gap: 8px; }
     .sep { width: 0.5px; height: 28px; background: rgba(255,255,255,0.12); }
     label.tool-label { font-size: 12px; color: #f0e6c8; }
-
     .color-btn {
       width: 26px; height: 26px; border-radius: 50%;
       border: 2px solid transparent; cursor: pointer; transition: transform 0.1s;
     }
     .color-btn:hover { transform: scale(1.15); }
     .color-btn.active { border-color: #f1c85c; }
-
     #custom-color {
       width: 26px; height: 26px; border-radius: 50%;
       border: 1px solid #ccc; cursor: pointer; padding: 0;
     }
-
     input[type=range] { width: 80px; }
     #size-out, #opacity-out, #scale-out { font-size: 12px; color: #f0e6c8; min-width: 28px; }
-
     button.tool-btn {
       padding: 5px 12px; font-size: 13px; border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.18); background: #16213a;
@@ -49,13 +58,11 @@
     button.tool-btn.active {
       background: #f1c85c; border-color: #f1c85c; color: #16213a;
     }
-
     select.tool-btn {
       padding: 5px 12px; font-size: 13px; border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.18); background: #16213a;
       color: #f0e6c8; cursor: pointer; font-weight: 500;
     }
-
     #upload-btn {
       padding: 5px 14px; font-size: 13px; border-radius: 8px;
       background: #534AB7; color: #f0e6c8; border: none;
@@ -63,24 +70,23 @@
       transition: background 0.15s;
     }
     #upload-btn:hover { background: #3C3489; }
-
     #canvas-wrap {
-      position: relative; width: 100vw; min-height: 420px;
+      position: relative; width: 100%; height: 100%;
       border: 1.5px solid #22304a;
       border-radius: 0;
       overflow: hidden; background: #16213a;
       display: flex; align-items: center; justify-content: center;
       margin: 0;
       box-sizing: border-box;
-      max-width: 100vw;
+      flex: 1 1 0;
+      max-width: 100%;
     }
-
     #bg-canvas, #draw-canvas {
       position: absolute; top: 0; left: 0;
+      touch-action: none;
     }
     #bg-canvas { z-index: 1; }
     #draw-canvas { z-index: 2; }
-
     #placeholder {
       color: #888; font-size: 15px; text-align: center;
       pointer-events: none; z-index: 3; padding: 2rem;

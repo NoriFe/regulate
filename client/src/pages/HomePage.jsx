@@ -152,7 +152,7 @@ function HomePage() {
           {t("home.supportEyebrow")}
         </p>
 
-        <div id="support-title" className="split-grid" style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem', width: '100%'}}>
+        <div id="support-title" className="home-support-grid">
         <div className="about-block speakable-block">
           <ReadAloudButton
             text={t("home.learnersRead")}
