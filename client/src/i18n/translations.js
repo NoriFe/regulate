@@ -215,7 +215,7 @@
       eyebrow: "Calm corner",
       title: "A safe place for calm and reset",
       copy:
-        "Use this space when your child needs a softer transition. Gentle music can support regulation, focus, and emotional settling before learning tasks.",
+        "A quiet space for children, parents and teachers who need a moment",
       read:
         "Calm corner. A safe place for calm and reset. Use this space when your child needs a softer transition. Gentle music can support regulation, focus, and emotional settling before learning tasks.",
       playerTitle: "Calming music video",
