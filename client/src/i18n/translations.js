@@ -103,7 +103,7 @@
       supportEyebrow: "Who I support",
       learnersEyebrow: "For learners",
       learnersTitle: "Children and young learners",
-      learnersCopy: "I support children and young learners - whether neurodivergent or neurotypical - aged 3-18. This includes learners with autism, ADHD, anxiety, low confidence and sensory or emotional needs, as well as those building confidence across the curriculum, including maths and KS2 SATs preparation. Support always begins with helping them regulate and feel ready to learn before moving into academic skills.",
+      learnersCopy: "I support children and young learners - whether neurodivergent or neurotypical. This includes learners with autism, ADHD, anxiety, low confidence and sensory or emotional needs, as well as those building confidence across the curriculum, including maths and KS2 SATs preparation. Support always begins with helping them regulate and feel ready to learn before moving into academic skills.",
       learnersRead:
         "For learners. Children and young learners. I support children and young learners aged 3–18 with autism, ADHD, anxiety, low confidence, sensory or emotional needs, and those building confidence in maths and KS2 SATs preparation. Before academic expectations, start with regulation supports that reduce stress and restore readiness to learn.",
       guardiansEyebrow: "For guardians",

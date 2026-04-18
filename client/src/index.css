@@ -1389,7 +1389,7 @@ color: #000000 !important;
 }
 
 .home-support-wrap .page-copy {
-	font-size: clamp(0.9rem, 0.9vw, 0.98rem);
+	font-size: clamp(1.20rem, 0.9vw, 1.28rem);
 	line-height: 1.6;
 	margin-bottom: 0;
 }
