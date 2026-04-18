@@ -44,24 +44,32 @@ function SenseMathsPage() {
             <li>{t("aboutPage.different2")}</li>
             <li>{t("aboutPage.different3")}</li>
             <li>{t("aboutPage.different4")}</li>
-            <li>{t("aboutPage.different5")}</li>
           </ul>
         </div>
       </section>
 
       <section className="services-cta speakable-block" aria-labelledby="sensemaths-cta-title">
-        <ReadAloudButton text={t("aboutPage.outcomeCopy")} />
         <div className="services-cta__content">
-          <p className="services-cta__eyebrow">{t("aboutPage.outcomeTitle")}</p>
-          <h2 id="sensemaths-cta-title" className="services-cta__title">
-            {t("aboutPage.outcomeTitle")}
-          </h2>
-          <p className="services-cta__copy">
-            {t("aboutPage.outcomeCopy")}
+          <p className="services-cta__eyebrow">Results</p>
+          <ul style={{ marginBottom: '1.5rem', marginTop: '0.5rem', paddingLeft: '1.2em' }}>
+            <li style={{listStyle: 'none', fontWeight: 700, color: '#c995a4', marginBottom: '0.3em'}}>Unlike traditional tutoring, the SenseMaths Method™:</li>
+            <li>✔ Focuses on how a child feels before learning begins</li>
+            <li>✔ Uses sensory and regulation strategies as part of teaching</li>
+            <li>✔ Embeds a consistent positive language approach</li>
+            <li>✔ Combines play, rhythm, and structure</li>
+            <li>✔ Supports both wellbeing and academic progress</li>
+          </ul>
+          <p style={{ marginBottom: '1.5rem' }}>
+            This creates not only improved outcomes in maths, but also greater confidence, independence, and enjoyment of learning.
           </p>
-          <a href="/contact" className="services-cta__button">
-            {t("contact.ctaButton") || "Get in Touch"}
-          </a>
+          <h2 id="sensemaths-cta-title" className="services-cta__title" style={{ marginTop: '2rem' }}>The Outcome</h2>
+          <ul style={{ marginBottom: '1.5rem', marginTop: '0.5rem', paddingLeft: '1.2em' }}>
+            <li>Feel calmer and more regulated</li>
+            <li>Develop confidence in their abilities</li>
+            <li>Engage more positively with learning</li>
+            <li>Build strong mathematical understanding and skills</li>
+            <li>Approach challenges with a more positive mindset</li>
+          </ul>
         </div>
       </section>
       {/* Centered Back Button */}
