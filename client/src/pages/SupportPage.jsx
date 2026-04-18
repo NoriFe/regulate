@@ -84,7 +84,7 @@ Focus: regulation, confidence, connection and learning that sticks.
       >
         <ReadAloudButton text="Specialist Sessions. Behaviour Understanding Sessions: For parents and teachers who want to understand shutdowns, meltdowns, fidgeting, avoidance, talking back, masking, transitions, overwhelm. Behaviour is communication. I help you understand what it’s saying. SenseMaths Sessions: Maths support for neurodivergent learners using sensory‑based, relational, regulation‑first methods. Curriculum Support Across Subjects: Reading, writing, maths and general learning support - always through a regulation‑first lens." />
         <div className="services-band__content">
-          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2.5rem', alignItems: 'stretch'}}>
+          <div className="support-sessions-grid">
             <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
               <h3 style={{margin: 0, fontSize: '2rem', lineHeight: 1.14}}>Behaviour Understanding Sessions</h3>
               <p style={{margin: '0.5rem 0 0 0'}}>For parents and teachers who want to understand:<br/>shutdowns, meltdowns, fidgeting, avoidance, talking back, masking, transitions, overwhelm.</p>

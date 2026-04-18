@@ -1,3 +1,15 @@
+/* Responsive grid for Specialist Sessions on SupportPage only */
+.support-sessions-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2.5rem;
+	align-items: stretch;
+}
+@media (max-width: 900px) {
+	.support-sessions-grid {
+		grid-template-columns: 1fr;
+	}
+}
 /* Responsive grid for Who I support section on HomePage only */
 .home-support-grid {
 	display: grid;
