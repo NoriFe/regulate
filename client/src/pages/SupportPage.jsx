@@ -133,7 +133,7 @@ Focus: regulation, confidence, connection and learning that sticks.
             <div style={{fontSize: '0.98rem'}}>Support for autistic, ADHD, anxious, sensory‑sensitive, overwhelmed or shutdown‑prone learners.<br />Includes RRE‑based curriculum support and SenseMaths.<br />Focus: regulation, confidence, connection, and learning that sticks.</div>
           </div>
           {/* Card 2 */}
-          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+          <div style={{background: 'none', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
             <h3 style={{margin: 0, fontSize: '1.25rem'}}>Parent Support & Coaching</h3>
             <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£45-£80 per hour</div>
             <div style={{fontSize: '0.98rem'}}>Gentle, practical guidance for behaviour, regulation and learning at home.<br />Understand your child’s nervous system, reduce overwhelm and build connection.</div>
@@ -145,7 +145,7 @@ Focus: regulation, confidence, connection and learning that sticks.
             <div style={{fontSize: '0.98rem'}}>Regulation‑first teaching strategies, sensory‑friendly adjustments, scripts for tricky moments, and confidence‑building for teachers who don’t fit the stereotype.</div>
           </div>
           {/* Card 4 */}
-          <div style={{background: 'rgba(249,147,120,0.13)', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
+          <div style={{background: '', borderRadius: '1rem', padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)'}}>
             <h3 style={{margin: 0, fontSize: '1.25rem'}}>Behaviour Understanding Sessions</h3>
             <div style={{fontWeight: 600, fontSize: '1.1rem', margin: '0.5rem 0'}}>£45-£85 per hour</div>
             <div style={{fontSize: '0.98rem'}}>For parents and teachers who want to understand shutdowns, meltdowns, fidgeting, avoidance, talking back, masking, transitions and overwhelm.<br />Behaviour is communication - we decode what it’s saying.</div>
@@ -169,8 +169,7 @@ Focus: regulation, confidence, connection and learning that sticks.
           <li>Sensory‑aware strategies</li>
           <li>Connection‑based teaching</li>
           <li>Personalised adjustments</li>
-          <li>Calm, compassionate support</li>
-          <li>Optional follow‑up notes (service‑dependent)</li>
+          <li>Calm, compassionate support</li>          
         </ul>
       </section>
     </div>
