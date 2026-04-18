@@ -1,3 +1,10 @@
+body:has(.regulation-page) {
+	background:
+		radial-gradient(circle at 84% 12%, rgba(0, 105, 126, 0.24), transparent 28%),
+		radial-gradient(circle at 14% 18%, rgba(249, 147, 120, 0.08), transparent 24%),
+		linear-gradient(180deg, #000113 0%, #000113 64%, #050816 100%);
+	color: #f7e8d5;
+}
 .about-journey-copy--right {
 	border: 2px solid #c995a4;
 	border-radius: 1.1rem;
@@ -197,7 +204,6 @@ body {
 	margin: 0;
 	font-family: var(--app-font-family);
 	color: var(--text);
-	background: linear-gradient(180deg, #14243a 0%, #0a1624 100%) !important;
 	line-height: 1.7;
 	letter-spacing: 0.01em;
 }
