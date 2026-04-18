@@ -1,8 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getSession, logoutUser } from "../lib/api";
-import logoAvif from "../assets/images/logo.avif";
-import logoPng from "../assets/images/logo.optimized.png";
+import logoPng from "../assets/images/logo.png";
 import { useLanguage } from "../context/LanguageContext";
 
 const navLinkClass = ({ isActive }) =>
@@ -56,7 +55,7 @@ function NavBar() {
         <div className="site-nav__top">
           <NavLink to="/main" className="site-brand" onClick={closeMenu}>
             <picture className="site-brand__media" aria-hidden="true">
-              <source srcSet={logoAvif} type="image/avif" />
+              <source srcSet={logoPng} type="image/png" />
               <img src={logoPng} alt="" className="site-brand__logo" loading="eager" decoding="async" />
             </picture>
             <span className="site-brand__text">
