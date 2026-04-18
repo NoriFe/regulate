@@ -96,7 +96,6 @@ function CalmCornerPage() {
         {/* Teacher Corner Container */}
         <aside
           className="teacher-corner-link-block speakable-block panel"
-          aria-labelledby="paint-corner-title"
           style={{
             flex: '1 1 340px',
             minWidth: 320,
@@ -114,16 +113,25 @@ function CalmCornerPage() {
             padding: '2rem',
           }}
         >
-          <ReadAloudButton text="Go to Paint Corner" />
-          <h2 id="paint-corner-title" className="page-title page-title--compact">Paint Corner</h2>
-          <p className="page-copy" style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-            Explore resources and tools for creativity. Try the interactive paint tool and more!
-          </p>
           <a
             href="/teacher-corner"
             className="services-cta__button"
+            style={{ marginBottom: '1rem' }}
           >
             Go to Paint Corner
+          </a>
+          <a
+            href="/regulation"
+            className="services-cta__button"
+            style={{ marginBottom: '1rem' }}
+          >
+            Go to Regulation
+          </a>
+          <a
+            href="/reels"
+            className="services-cta__button"
+          >
+            Go to Reels
           </a>
         </aside>
       </div>

@@ -213,12 +213,12 @@
     },
     calmCorner: {
       eyebrow: "Calm corner",
-      title: "A safe place for calm and reset",
+      title: "Safe place for calm and reset",
       copy:
         "A quiet space for children, parents and teachers who need a moment",
       read:
         "Calm corner. A safe place for calm and reset. Use this space when your child needs a softer transition. Gentle music can support regulation, focus, and emotional settling before learning tasks.",
-      playerTitle: "Calming music video",
+      playerTitle: "Music corner",
       playerCopy: "Choose a video and create a calm moment before moving forward.",
       playerRead:
         "Calming music video. Choose a video and create a calm moment before moving forward.",

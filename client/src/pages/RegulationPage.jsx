@@ -1,0 +1,179 @@
+
+
+
+import ReadAloudButton from "../components/ReadAloudButton";
+
+const icons = {
+  break: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style={{marginRight: 12}}><circle cx="16" cy="16" r="15" stroke="#c995a4" strokeWidth="2" fill="#f7e8d5" /><path d="M10 18c2-2 10-2 12 0" stroke="#00697e" strokeWidth="2" strokeLinecap="round"/><circle cx="13" cy="14" r="1.5" fill="#00697e"/><circle cx="19" cy="14" r="1.5" fill="#00697e"/></svg>
+  ),
+  escape: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style={{marginRight: 12}}><rect x="2" y="8" width="28" height="16" rx="8" fill="#e6f2f7" stroke="#72bfa4" strokeWidth="2"/><path d="M8 16h16" stroke="#72bfa4" strokeWidth="2" strokeLinecap="round"/></svg>
+  ),
+  regulate: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style={{marginRight: 12}}><circle cx="16" cy="16" r="14" fill="#e6f2f7" stroke="#f99378" strokeWidth="2"/><path d="M10 16c2-4 10-4 12 0" stroke="#f99378" strokeWidth="2" strokeLinecap="round"/></svg>
+  ),
+  tools: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style={{marginRight: 12}}><rect x="6" y="6" width="20" height="20" rx="6" fill="#f7e8d5" stroke="#c995a4" strokeWidth="2"/><path d="M10 22l12-12M10 10l12 12" stroke="#c995a4" strokeWidth="2"/></svg>
+  ),
+  support: (
+    <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style={{marginRight: 12}}><ellipse cx="16" cy="20" rx="10" ry="6" fill="#e6f2f7" stroke="#72bfa4" strokeWidth="2"/><circle cx="16" cy="12" r="6" fill="#f7e8d5" stroke="#c995a4" strokeWidth="2"/></svg>
+  ),
+};
+
+
+export default function RegulationPage() {
+  return (
+    <div className="regulation-timeline-bg">
+      <section className="speakable-block" aria-labelledby="regulation-hero-title" style={{textAlign: 'center', padding: '3.5rem 0 2.5rem 0'}}>
+        <ReadAloudButton text="Regulation for Teachers. Calm, ND-friendly, practical support for real classrooms." />
+        <h1 id="regulation-hero-title" style={{fontSize: '2.8rem', fontWeight: 900, color: '#00697e', letterSpacing: '-0.03em', marginBottom: 0}}>Regulation for Teachers</h1>
+        <p style={{fontSize: '1.35rem', color: '#243447', margin: '1.2rem auto 0', maxWidth: 680, fontWeight: 500}}>A calm, practical, ND-friendly toolkit for teachers who need a moment to reset, recharge, and remember you’re human.</p>
+      </section>
+      <div className="regulation-timeline-wrapper">
+        <div className="regulation-timeline-line"></div>
+        <div className="timeline-stop" style={{marginTop: 0}}>
+          <div className="timeline-stop-header">{icons.break}<span className="timeline-stop-title" style={{color: '#c995a4'}}>Break Room</span></div>
+          <ul className="timeline-stop-list">
+            <li>If you’re overwhelmed, it’s because the job is overwhelming.</li>
+            <li>If you’re autistic and teaching, your sensory system is working overtime.</li>
+            <li>If you’re ADHD and teaching, you’re juggling 14 mental tabs at once.</li>
+            <li>If you’re shy and teaching, you’re performing all day.</li>
+            <li>If you’re exhausted, it’s because you’ve been regulating everyone else’s nervous systems.</li>
+            <li>If you feel guilty for needing a break, that’s a sign you need two.</li>
+          </ul>
+          <div className="timeline-stop-desc">A place to breathe, hide, decompress, and remember you’re a human being.</div>
+        </div>
+        <div className="timeline-stop" style={{marginTop: 60}}>
+          <div className="timeline-stop-header">{icons.escape}<span className="timeline-stop-title" style={{color: '#72bfa4'}}>Micro‑Escapes</span></div>
+          <ul className="timeline-stop-list">
+            <li>Look at one still object for 10 seconds.</li>
+            <li>Drop your shoulders.</li>
+            <li>Unclench your jaw.</li>
+            <li>Put both feet flat on the floor.</li>
+            <li>Name one thing that’s not on fire.</li>
+            <li>Breathe out longer than you breathe in.</li>
+            <li>Let your face go blank.</li>
+            <li>Stare at the wall. It counts.</li>
+          </ul>
+          <div className="timeline-stop-label" style={{color: '#c995a4'}}>Sarcastic Truths</div>
+          <ul className="timeline-stop-list timeline-stop-list-secondary">
+            <li>“Just stay calm.” Sure, let me switch off my nervous system like a lamp.</li>
+            <li>“Just follow the policy.” Which one — today’s or yesterday’s.</li>
+            <li>“Just regulate them.” I left my magic wand in the staffroom.</li>
+            <li>“Just make it fun.” With what time, exactly.</li>
+            <li>“Just be consistent.” While everything around me changes hourly.</li>
+          </ul>
+        </div>
+        <div className="timeline-stop" style={{marginTop: 120}}>
+          <div className="timeline-stop-header">{icons.regulate}<span className="timeline-stop-title" style={{color: '#f99378'}}>Regulate in 30s</span></div>
+          <ul className="timeline-stop-list">
+            <li>Put your hand on something cold.</li>
+            <li>Press your tongue to the roof of your mouth.</li>
+            <li>Look at something that isn’t moving.</li>
+            <li>Touch something with texture.</li>
+            <li>Count five things that are the same colour.</li>
+            <li>Let your shoulders drop.</li>
+            <li>Exhale like you’re annoyed.</li>
+            <li>Sit back in your chair and let gravity do the work.</li>
+          </ul>
+          <div className="timeline-stop-label" style={{color: '#f99378'}}>Sensory Reset</div>
+          <ul className="timeline-stop-list timeline-stop-list-secondary">
+            <li>Close your eyes for 3 seconds.</li>
+            <li>Open them slowly.</li>
+            <li>Look at the furthest object in the room.</li>
+            <li>Look at the closest object.</li>
+            <li>Repeat once.</li>
+          </ul>
+        </div>
+        <div className="timeline-stop" style={{marginTop: 180}}>
+          <div className="timeline-stop-header">{icons.tools}<span className="timeline-stop-title" style={{color: '#c995a4'}}>Survival Tools</span></div>
+          <div className="timeline-stop-label" style={{color: '#c995a4'}}>Scripts for Overwhelm</div>
+          <ul className="timeline-stop-list">
+            <li>“I’m going to answer one question at a time.”</li>
+            <li>“Let’s pause for a moment.”</li>
+            <li>“I hear you. Give me a second.”</li>
+            <li>“We’ll come back to this.”</li>
+            <li>“Let’s slow this down.”</li>
+          </ul>
+          <div className="timeline-stop-label" style={{color: '#f99378'}}>Behaviour Reframes</div>
+          <ul className="timeline-stop-list timeline-stop-list-secondary">
+            <li>Fidgeting = regulation.</li>
+            <li>Avoidance = overwhelm.</li>
+            <li>Talking back = dysregulation.</li>
+            <li>Shutdown = overload.</li>
+            <li>Meltdown = release.</li>
+            <li>Masking = survival.</li>
+          </ul>
+        </div>
+      </div>
+      <section className="timeline-stop timeline-stop-wide" aria-labelledby="nd-support-title">
+        <div className="timeline-stop-header">{icons.support}<span className="timeline-stop-title" style={{color: '#72bfa4'}}>Support for Teachers Who Don’t Fit the Stereotype</span></div>
+        <p className="timeline-stop-wide-desc">
+          You don’t need to be loud to be effective.<br/>
+          You don’t need to be extroverted to connect.<br/>
+          You don’t need to mask to be respected.<br/>
+          You don’t need to burn out to prove you care.
+        </p>
+        <div className="timeline-stop-wide-flex">
+          <div>
+            <div className="timeline-stop-label" style={{color: '#c995a4'}}>What You Get</div>
+            <ul className="timeline-stop-list">
+              <li>Regulation‑first teaching strategies</li>
+              <li>Sensory‑friendly classroom adjustments</li>
+              <li>Support for overwhelm</li>
+              <li>Behaviour understanding</li>
+              <li>RRE Method applied to teachers</li>
+              <li>Scripts for tricky moments</li>
+              <li>Confidence‑building for teachers who feel “different”</li>
+            </ul>
+          </div>
+          <div>
+            <div className="timeline-stop-label" style={{color: '#f99378'}}>What You Don’t Get</div>
+            <ul className="timeline-stop-list timeline-stop-list-secondary">
+              <li>Judgement</li>
+              <li>“Just try harder” advice</li>
+              <li>Behaviour charts</li>
+              <li>Toxic positivity</li>
+              <li>Unrealistic expectations</li>
+            </ul>
+          </div>
+        </div>
+        <div className="timeline-stop-label" style={{color: '#c995a4', marginTop: '2.2rem'}}>Why This Matters</div>
+        <div className="timeline-stop-desc">Because teachers are humans with nervous systems too.<br/>And yours deserves support, not pressure.</div>
+        <div className="timeline-stop-wide-flex">
+          <div>
+            <div className="timeline-stop-label" style={{color: '#72bfa4'}}>Micro‑Regulation Tools</div>
+            <ul className="timeline-stop-list">
+              <li>Look at one still object for 10 seconds.</li>
+              <li>Drop your shoulders.</li>
+              <li>Unclench your jaw.</li>
+              <li>Put both feet flat on the floor.</li>
+              <li>Touch something with texture.</li>
+              <li>Exhale longer than you inhale.</li>
+              <li>Let your face go blank.</li>
+              <li>Stare at the wall. It counts.</li>
+            </ul>
+          </div>
+          <div>
+            <div className="timeline-stop-label" style={{color: '#f99378'}}>Sensory Resets</div>
+            <ul className="timeline-stop-list timeline-stop-list-secondary">
+              <li>Hold something cold.</li>
+              <li>Press your tongue to the roof of your mouth.</li>
+              <li>Close your eyes for 3 seconds.</li>
+              <li>Look at something far away.</li>
+              <li>Look at something close.</li>
+            </ul>
+            <div className="timeline-stop-label" style={{color: '#c995a4', marginTop: 18}}>Cognitive Unclutter</div>
+            <ul className="timeline-stop-list">
+              <li>“This is a moment, not a failure.”</li>
+              <li>“My brain is overstimulated, not broken.”</li>
+              <li>“I don’t need to fix everything right now.”</li>
+              <li>“I can do the next tiny thing.”</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
