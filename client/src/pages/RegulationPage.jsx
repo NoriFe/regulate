@@ -1,6 +1,8 @@
 
 
 
+
+import { Link } from "react-router-dom";
 import ReadAloudButton from "../components/ReadAloudButton";
 
 const icons = {
@@ -183,6 +185,13 @@ You get to show up as a whole human - not a polished version of yourself.
           </div>
         </div>
       </section>
+
+      {/* Back to Calm Corner button */}
+      <div style={{ textAlign: 'center', margin: '2.5rem 0 3.5rem 0' }}>
+        <Link to="/calm-corner" className="back-home-btn">
+          Back to Calm Corner
+        </Link>
+      </div>
     </div>
   );
 }
