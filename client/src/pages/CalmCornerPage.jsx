@@ -93,9 +93,9 @@ function CalmCornerPage() {
           <p className="field-helper" style={{ textAlign: 'center', color: '#64748b' }}>{t("calmCorner.sourceNote")}</p>
         </section>
 
-        {/* Teacher Corner Container */}
+        {/* Paint Container */}
         <aside
-          className="teacher-corner-link-block speakable-block panel"
+          className="paint-link-block speakable-block panel"
           style={{
             flex: '1 1 340px',
             minWidth: 320,
@@ -114,11 +114,11 @@ function CalmCornerPage() {
           }}
         >
           <a
-            href="/teacher-corner"
+            href="/paint"
             className="services-cta__button"
             style={{ marginBottom: '1rem' }}
           >
-            Go to Paint Corner
+            Go to Paint
           </a>
           <a
             href="/regulation"

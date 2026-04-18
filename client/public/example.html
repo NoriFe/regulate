@@ -50,6 +50,12 @@
       background: #f1c85c; border-color: #f1c85c; color: #16213a;
     }
 
+    select.tool-btn {
+      padding: 5px 12px; font-size: 13px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18); background: #16213a;
+      color: #f0e6c8; cursor: pointer; font-weight: 500;
+    }
+
     #upload-btn {
       padding: 5px 14px; font-size: 13px; border-radius: 8px;
       background: #534AB7; color: #f0e6c8; border: none;
@@ -91,6 +97,19 @@
     <div class="tool-group">
       <button id="upload-btn" onclick="document.getElementById('file-in').click()">+ Pick picture</button>
       <input type="file" id="file-in" accept="image/*" style="display:none">
+      <select id="template-picker" class="tool-btn" style="margin-left:8px;min-width:120px;">
+        <option value="">+ Template</option>
+        <option value="bookmarks/bookmark_01_page-0001.jpg">Bookmark 1</option>
+        <option value="bookmarks/bookmark_02_page-0001.jpg">Bookmark 2</option>
+        <option value="bookmarks/bookmark_03_page-0001.jpg">Bookmark 3</option>
+        <option value="bookmarks/bookmark_04_page-0001.jpg">Bookmark 4</option>
+        <option value="bookmarks/bookmark_05_page-0001.jpg">Bookmark 5</option>
+        <option value="bookmarks/bookmark_06_page-0001.jpg">Bookmark 6</option>
+        <option value="bookmarks/bookmark_07_page-0001.jpg">Bookmark 7</option>
+        <option value="bookmarks/bookmark_08_page-0001.jpg">Bookmark 8</option>
+        <option value="bookmarks/bookmark_09_page-0001.jpg">Bookmark 9</option>
+      </select>
+      <button id="whiteboard-btn" class="tool-btn" style="margin-left:8px;" onclick="initWhiteboard()">Whiteboard</button>
     </div>
     <div class="sep"></div>
     <div class="tool-group">
@@ -141,9 +160,6 @@
   </div>
 
   <div id="canvas-wrap">
-    <div id="placeholder">
-      <span>🖼</span>Pick a picture above, then paint away!
-    </div>
     <canvas id="bg-canvas"></canvas>
     <canvas id="draw-canvas"></canvas>
   </div>
@@ -154,7 +170,6 @@
     const bgCtx = bgC.getContext('2d');
     const dCtx  = drawC.getContext('2d');
     const wrap  = document.getElementById('canvas-wrap');
-    const ph    = document.getElementById('placeholder');
 
     let tool = 'brush', color = '#E24B4A', painting = false;
     let undoStack = [], lastX, lastY;
@@ -194,36 +209,78 @@
     function clearDraw() {
       saveUndo();
       dCtx.clearRect(0, 0, drawC.width, drawC.height);
+      if (!originalImg) {
+        bgCtx.fillStyle = '#ffffff';
+        bgCtx.fillRect(0, 0, bgC.width, bgC.height);
+      }
     }
 
-    document.getElementById('file-in').addEventListener('change', e => {
+    function initWhiteboard() {
+      const w = wrap.offsetWidth || 800;
+      const h = Math.max(wrap.offsetHeight, 520);
+      imgW = w; imgH = h;
+      bgC.width = drawC.width = w;
+      bgC.height = drawC.height = h;
+      bgC.style.width = drawC.style.width = w + 'px';
+      bgC.style.height = drawC.style.height = h + 'px';
+      wrap.style.height = h + 'px';
+      bgCtx.fillStyle = '#ffffff';
+      bgCtx.fillRect(0, 0, w, h);
+      dCtx.clearRect(0, 0, w, h);
+      undoStack = [];
+      originalImg = null;
+      document.getElementById('img-scale').value = 100;
+      document.getElementById('scale-out').textContent = '100%';
+    }
+
+    function loadImageOntoCanvas(img) {
+      const maxW = wrap.offsetWidth || 700;
+      const maxH = 520;
+      let w = img.width, h = img.height;
+      const ratio = Math.min(maxW / w, maxH / h, 1);
+      w = Math.round(w * ratio);
+      h = Math.round(h * ratio);
+      imgW = w; imgH = h;
+      bgC.width = drawC.width = w;
+      bgC.height = drawC.height = h;
+      bgC.style.width = drawC.style.width = w + 'px';
+      bgC.style.height = drawC.style.height = h + 'px';
+      wrap.style.height = h + 'px';
+      bgCtx.clearRect(0, 0, w, h);
+      bgCtx.drawImage(img, 0, 0, w, h);
+      dCtx.clearRect(0, 0, w, h);
+      undoStack = [];
+      originalImg = img;
+      document.getElementById('img-scale').value = 100;
+      document.getElementById('scale-out').textContent = '100%';
+    }
+
+    // File upload
+    document.getElementById('file-in').addEventListener('change', function(e) {
       const file = e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
       reader.onload = ev => {
         const img = new Image();
-        img.onload = () => {
-          const maxW = wrap.offsetWidth || 700;
-          const maxH = 520;
-          let w = img.width, h = img.height;
-          const ratio = Math.min(maxW / w, maxH / h, 1);
-          w = Math.round(w * ratio);
-          h = Math.round(h * ratio);
-          imgW = w; imgH = h;
-          bgC.width = drawC.width = w;
-          bgC.height = drawC.height = h;
-          bgC.style.width = drawC.style.width = w + 'px';
-          bgC.style.height = drawC.style.height = h + 'px';
-          wrap.style.height = h + 'px';
-          bgCtx.drawImage(img, 0, 0, w, h);
-          dCtx.clearRect(0, 0, w, h);
-          undoStack = [];
-          ph.style.display = 'none';
-          originalImg = img;
-        };
+        img.onload = () => loadImageOntoCanvas(img);
         img.src = ev.target.result;
       };
       reader.readAsDataURL(file);
+    });
+
+    // Template picker — FIX: use root-relative path, not window.location.origin
+    document.getElementById('template-picker').addEventListener('change', function(e) {
+      const val = e.target.value;
+      if (!val) return;
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => loadImageOntoCanvas(img);
+      img.onerror = () => {
+        alert('Could not load template at: ' + ('/' + val) + '\nMake sure the bookmarks folder is inside your public/ directory and the file exists.');
+      };
+      img.src = '/' + val;
+      // Reset select back to placeholder so the same template can be re-picked
+      e.target.value = '';
     });
 
     function getPos(e) {
@@ -242,7 +299,6 @@
     }
 
     function startPaint(e) {
-      if (!imgW) return;
       e.preventDefault();
       if (tool === 'fill') { saveUndo(); floodFill(e); return; }
       saveUndo();
@@ -348,6 +404,8 @@
     drawC.addEventListener('touchstart', startPaint, { passive: false });
     drawC.addEventListener('touchmove',  doPaint,    { passive: false });
     drawC.addEventListener('touchend',   endPaint);
+
+    window.addEventListener('load', initWhiteboard);
   </script>
 
 </body>

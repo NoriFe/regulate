@@ -1,3 +1,12 @@
+.paint-page .services-band.paint-no-radius-bg {
+	border-radius: 0 !important;
+	background: none !important;
+}
+body:has(.paint-page) {
+	background:
+		     radial-gradient(circle at 84% 12%, rgba(0, 105, 126, 0.24), transparent 28%), radial-gradient(circle at 14% 18%, rgba(249, 147, 120, 0.08), transparent 24%), linear-gradient(180deg, #000113 0%, #000113 64%, #050816 100%);
+	color: #f7e8d5;
+}
 body:has(.regulation-page) {
 	background:
 		radial-gradient(circle at 84% 12%, rgba(0, 105, 126, 0.24), transparent 28%),
