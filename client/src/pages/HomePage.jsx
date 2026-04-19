@@ -45,11 +45,7 @@ function HomePage() {
 </div>
      
 
-      <section className="home-hero-banner speakable-block" aria-labelledby="home-hero-banner-title">
-  
-  <p className="page-kicker"></p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-  
-</section>
+      
       
 
       <section className="about-motto-section" aria-label="Guiding Motto">

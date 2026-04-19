@@ -23,34 +23,51 @@
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  height: 1200px;
-  overflow: hidden;
-  margin-bottom: -320px; /* pulls about section UP over the image */
+  margin-bottom: -80px;
+  /* NO fixed height — image decides */
 }
 
 .home-hero-bleed__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 70%;
   display: block;
+  width: 100%;
+  height: auto;          /* 👈 full image always visible */
+  object-fit: unset;
+  z-index: 0;
 }
+
 
 .home-hero-bleed__fade {
   position: absolute;
-  bottom: 0;
+  bottom: -220px;
   left: 0;
   right: 0;
-  height: 30%;
-  background: linear-gradient(to bottom, transparent, #000113);  
+  height: 15%;           /* 👈 smaller — only fades the very bottom */
+  background: linear-gradient(to bottom, transparent 0%, #000113 100%);
+  pointer-events: none;
+ 
 }
-@media (max-width: 720px) {
+.home-hero-bleed {
+  height: clamp(320px, 55vw, 680px); /* 👈 bigger on all screens */
+  max-height: 680px;
+}
+
+@media (max-width: 960px) {
   .home-hero-bleed {
-    height: 50vh;
-    margin-bottom: -50px;
+    height: clamp(260px, 50vw, 500px); /* 👈 more generous on tablet */
   }
 }
 
+@media (max-width: 720px) {
+  .home-hero-bleed {
+    margin-bottom: -40px;
+  }
+}
+
+.home-hero-bleed__img {
+  max-height: 900px;     /* 👈 cap on ultrawide */
+  width: 100%;
+  height: auto;
+}
 /* .home-hero-banner {
   position: relative;
   z-index: 2;
