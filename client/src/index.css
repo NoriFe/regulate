@@ -54,6 +54,11 @@
   pointer-events: none;
  
 }
+@media (max-width: 720px) {
+  .home-hero-bleed__fade {
+    display: none;
+  }
+}
 .home-hero-bleed {
   height: clamp(320px, 55vw, 680px); /* 👈 bigger on all screens */
   max-height: 680px;
