@@ -1,5 +1,6 @@
 import ReadAloudButton from "../components/ReadAloudButton";
 import { useLanguage } from "../context/LanguageContext";
+import ContactForm from "../components/ContactForm";
 
 function ContactPage() {
   const { t } = useLanguage();
@@ -106,6 +107,10 @@ function ContactPage() {
             </a>
           </div>
         </article>
+      </section>
+      <section className="contact-form-section speakable-block" aria-label="Contact form">
+        <h2 className="page-title page-title--compact" style={{marginTop: '1.5rem'}}>Send a Message</h2>
+        <ContactForm />
       </section>
     </div>
   );

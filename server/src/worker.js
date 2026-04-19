@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { sendContactEmail } from "./services/mailgun.js";
 
 const SESSION_COOKIE_NAME = "session";
 const LEGACY_SESSION_COOKIE_NAME = "__Host-session";
@@ -594,6 +595,36 @@ export default {
         }
 
         return methodNotAllowed(cors);
+      }
+
+      if (url.pathname === "/api/contact") {
+        if (request.method !== "POST") return methodNotAllowed(cors);
+        // Basic anti-spam: rate limit by IP
+        const ip = getIp(request);
+        const canProceed = await checkRateLimit(env, `contact:${ip}`, 3, 60 * 10); // 3 per 10 min
+        if (!canProceed) return tooManyRequests(cors);
+        // Parse and validate body
+        let body;
+        try {
+          body = await parseJsonBody(request);
+        } catch {
+          return badRequest("Invalid JSON.", cors);
+        }
+        const name = (body.name || "").trim().slice(0, 80);
+        const email = (body.email || "").trim().toLowerCase().slice(0, 120);
+        const message = (body.message || "").trim().slice(0, 2000);
+        if (!name || !email || !message) return badRequest("All fields are required.", cors);
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return badRequest("Invalid email.", cors);
+        // Simple spam keyword filter
+        const spamWords = ["viagra", "casino", "loan", "bitcoin", "sex", "porn", "escort", "cialis", "pharmacy", "crypto", "nude"];
+        if (spamWords.some(w => message.toLowerCase().includes(w))) return badRequest("Message flagged as spam.", cors);
+        // Send email via Mailgun
+        try {
+          await sendContactEmail({ name, email, message });
+        } catch (e) {
+          return json({ error: "Failed to send email." }, 500, cors);
+        }
+        return json({ ok: true, message: "Message sent." }, 200, cors);
       }
 
       return json({ error: "Not found" }, 404, cors);
