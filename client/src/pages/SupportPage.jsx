@@ -24,7 +24,7 @@ function SupportPage() {
         <div className="services-hero__visual" aria-hidden="true" style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center', padding: 0, margin: 0, width: '100%', height: '100%'}}>
           <img
             src={picture1}
-            alt=""
+            alt="Regulation-based support for neurodivergent learners, RRE™ and SenseMaths™ specialist visual"
             style={{
               width: '100%',
               height:  'auto',

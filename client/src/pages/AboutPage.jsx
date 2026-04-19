@@ -74,7 +74,7 @@ function AboutPage() {
           </div>
           <img
             src={helloPhoto}
-            alt="Angelika"
+            alt="Angelika, regulation-based learning specialist supporting neurodivergent children, parents, and educators with RRE™ and SenseMaths™."
             className="about-hello-photo about-photo blob-img"
           />
         </div>

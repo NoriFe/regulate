@@ -1,4 +1,88 @@
-/* Responsive layout for SenseMaths details section */
+
+
+.home-before-start {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 420px;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.home-before-start::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, #000113);
+}
+/* Full bleed hero image */
+.home-hero-bleed {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: 1200px;
+  overflow: hidden;
+  margin-bottom: -320px; /* pulls about section UP over the image */
+}
+
+.home-hero-bleed__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  display: block;
+}
+
+.home-hero-bleed__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, #000113);
+  
+}
+/* .home-hero-banner {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 1, 19, 0.35);
+  border: 1px solid rgba(201, 148, 197, 0.25);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.home-hero-banner__title {
+  color: #c994c5 !important;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0.2rem 0;
+  line-height: 1.3;
+  text-align: center;
+  
+} */
+
+@media (max-width: 720px) {
+  .home-hero-bleed {
+    height: 260px;
+    margin-bottom: -80px;
+  }
+}
+/* moj css */
+@media (max-width: 720px) {
+  .home-before-start {
+    min-height: 260px;
+    background-attachment: scroll;
+  }
+  .ultimateBG {
+    background-attachment: scroll;
+  }
+}
 .sensemaths-details__visual, .sensemaths-details__content {
 	margin: 0;
 }
@@ -807,7 +891,7 @@ a {
 
 .site-main {
 	flex: 1;
-	padding: 1.5rem 0 2.5rem;
+	padding: 1.54rem 0 2.5rem;
 }
 
 .site-footer {
@@ -2853,6 +2937,7 @@ color: #000000 !important;
 	padding: 0;
 	min-height: 100vh;
 	color: #f7e8d5;
+	margin-top: -1.5rem;
 }
 
 
