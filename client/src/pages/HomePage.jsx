@@ -39,9 +39,17 @@ function HomePage() {
   return (
    
       <div className="page-stack about-page home-page">
-        <div className="home-hero-bleed">
+      <div className="home-hero-bleed">
   <img src={backgroundImage} alt="" aria-hidden="true" className="home-hero-bleed__img" />
   <div className="home-hero-bleed__fade" />
+</div>
+
+<div className="home-hero-spacer" aria-hidden="true" /><br/><br/><br/><br/>
+
+<div className="home-hero-sub">
+  <p className="home-hero-sub__text">
+    
+  </p>
 </div>
      
 
@@ -50,13 +58,13 @@ function HomePage() {
 
       <section className="about-motto-section" aria-label="Guiding Motto">
   <div className="about-motto-section__content">
-    <p className="section-eyebrow section-eyebrow--soft">{t("aboutPage.mottoLabel")}</p>
+    <p className="section-eyebrow section-eyebrow--soft">WELCOME</p>
     <h2 className="page-title page-title--compact about-motto-section__title">
-      {t("aboutPage.mottoLine1")}
+      Supporting neurodiverse children, parents and educators - so every child can feel calm, connected and ready to learn.
     </h2>
     
     <h2 className="page-title page-title--compact about-motto-section__title">
-      {t("aboutPage.mottoLine2")}
+      
     </h2>
   </div>
 </section>

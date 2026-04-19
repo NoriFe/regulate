@@ -1,3 +1,11 @@
+@media (max-width: 700px) {
+	.page-stack,
+	.about-page,
+	.home-page {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
 
 
 .home-before-start {
@@ -23,7 +31,7 @@
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  margin-bottom: -80px;
+  margin-bottom: 0px;
   /* NO fixed height — image decides */
 }
 
@@ -41,7 +49,7 @@
   bottom: -220px;
   left: 0;
   right: 0;
-  height: 15%;           /* 👈 smaller — only fades the very bottom */
+  height: 25%;           /* 👈 smaller — only fades the very bottom */
   background: linear-gradient(to bottom, transparent 0%, #000113 100%);
   pointer-events: none;
  
@@ -68,6 +76,37 @@
   width: 100%;
   height: auto;
 }
+
+.home-hero-sub__text {
+  color: rgba(247, 232, 213, 0.85);
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.home-hero-bleed__sub {
+  color: rgba(247, 232, 213, 0.85);
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 720px) {
+  .home-hero-bleed__text {
+    bottom: 1rem;
+    padding: 0 1rem;
+  }
+}
+.home-hero-sub {
+  text-align: center;
+  padding: 1.5rem 2rem 2rem;
+  margin-top: -2rem;     /* pulls it up slightly over the fade */
+}
+
 /* .home-hero-banner {
   position: relative;
   z-index: 2;
