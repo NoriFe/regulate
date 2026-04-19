@@ -37,7 +37,7 @@ function HomePage() {
   ].join(" ");
 
   return (
-    <div className="ultimateBG">
+   
       <div className="page-stack about-page home-page">
         <div className="home-hero-bleed">
   <img src={backgroundImage} alt="" aria-hidden="true" className="home-hero-bleed__img" />
@@ -197,7 +197,7 @@ function HomePage() {
         </div>
       </div>
     </div>
-    </div>
+    
   );
 }
 
