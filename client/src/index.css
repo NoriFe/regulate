@@ -42,9 +42,15 @@
   left: 0;
   right: 0;
   height: 30%;
-  background: linear-gradient(to bottom, transparent, #000113);
-  
+  background: linear-gradient(to bottom, transparent, #000113);  
 }
+@media (max-width: 720px) {
+  .home-hero-bleed {
+    height: 50vh;
+    margin-bottom: -50px;
+  }
+}
+
 /* .home-hero-banner {
   position: relative;
   z-index: 2;
