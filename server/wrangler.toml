@@ -6,7 +6,7 @@ compatibility_date = "2026-04-12"
 [[d1_databases]]
 binding = "REGULATE_DB"
 database_name = "regulate_to_learn"
-database_id = "7499cece-8553-47bd-9f27-68d52ed8ef07"
+database_id = "8a23f58c-3416-49fb-bb1f-51a106f3ace9"
 migrations_dir = "migrations"
 
 [vars]

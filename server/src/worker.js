@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { sendContactEmail } from "./services/mailgun.js";
 
 const SESSION_COOKIE_NAME = "session";
 const LEGACY_SESSION_COOKIE_NAME = "__Host-session";
@@ -323,6 +322,34 @@ function publicUser(user) {
   };
 }
 
+async function sendContactEmail({ name, email, message }, env) {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "Contact Form <noreply@regulate2learn.com>",
+      to: ["you@regulate2learn.com"], // 👈 replace with your Zoho email
+      reply_to: email,
+      subject: `New message from ${name}`,
+      html: `
+        <h2>New Contact Form Message</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
+    }),
+  });
+
+  if (!res.ok) {
+    const error = await res.text();
+    throw new Error(`Resend error: ${error}`);
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -620,7 +647,7 @@ export default {
         if (spamWords.some(w => message.toLowerCase().includes(w))) return badRequest("Message flagged as spam.", cors);
         // Send email via Mailgun
         try {
-          await sendContactEmail({ name, email, message });
+          await sendContactEmail({ name, email, message }, env);
         } catch (e) {
           return json({ error: "Failed to send email." }, 500, cors);
         }
