@@ -67,12 +67,16 @@ function jsonWithCookies(data, status, extraHeaders, cookies) {
 }
 
 function corsHeaders(origin, env) {
-  const allowedOrigin = env.ALLOWED_ORIGIN;
+  const allowedOrigins = [
+    env.ALLOWED_ORIGIN,
+    "https://regulate2learn.com",
+    "https://www.regulate2learn.com",
+  ];
   const isDevLocalhost = env.ENVIRONMENT !== "production" && typeof origin === "string" && /^http:\/\/localhost:\d+$/.test(origin);
   const allowOrigin = isDevLocalhost
     ? origin
-    : allowedOrigin && origin === allowedOrigin
-      ? allowedOrigin
+    : allowedOrigins.includes(origin)
+      ? origin
       : "null";
 
   return {
