@@ -35,7 +35,7 @@ function PublicLayout() {
           <div className="site-footer__social" aria-label={t("common.footerSocialLabel")}>
             <a
               className="site-footer__social-link"
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/share/1CkCtzjthp/?mibextid=wwXIfr"
               target="_blank"
               rel="noreferrer"
               aria-label={t("common.socialFacebook")}
@@ -47,7 +47,7 @@ function PublicLayout() {
             </a>
             <a
               className="site-footer__social-link"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/regulate2learn"
               target="_blank"
               rel="noreferrer"
               aria-label={t("common.socialInstagram")}
@@ -71,7 +71,7 @@ function PublicLayout() {
             </a>
             <a
               className="site-footer__social-link"
-              href="https://www.x.com"
+              href="https://x.com/regulate2learn"
               target="_blank"
               rel="noreferrer"
               aria-label={t("common.socialX")}
